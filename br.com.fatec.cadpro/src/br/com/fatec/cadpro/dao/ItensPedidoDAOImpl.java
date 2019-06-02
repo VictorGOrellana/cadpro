@@ -22,11 +22,6 @@ public class ItensPedidoDAOImpl  implements ItensPedidoDAO{
 		
 	}
 
-	@Override
-	public boolean existeItensPedidoPorFornecedor(ItensPedido iPedido) throws GenericDAOException {
-		// TODO Auto-generated method stub
-		return false;
-	}
 
 	@Override
 	public boolean existeFornecedorPorProduto(ItensPedido iPedido) throws GenericDAOException {
