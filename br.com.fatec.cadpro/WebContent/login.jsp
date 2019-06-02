@@ -1,4 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ page import="br.com.fatec.cadpro.dao.LoginDAOImpl"%>
+<%@ page import="br.com.fatec.cadpro.dao.LoginDAO"%>
+<%@ page import="br.com.fatec.cadpro.entidades.Login"%>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -50,7 +53,9 @@
 			</p>
 		</div>
 		<p>
-			<button type="submit" class="btn btn-primary" onclick="window.location='index.html';">Entrar</button>
+	
+		
+			<button type="submit" class="btn btn-primary" onclick="window.location='index.jsp';">Entrar</button>
 		</p>
 	</section>
 
