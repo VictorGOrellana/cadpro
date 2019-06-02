@@ -13,7 +13,5 @@
 			<attribute name="owner.project.facets" value="java"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="js/bootstrap.bundle.min.js"/>
-	<classpathentry kind="lib" path="js/bootstrap.min.js"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

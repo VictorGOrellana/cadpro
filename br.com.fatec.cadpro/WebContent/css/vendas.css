@@ -19,7 +19,7 @@ ul {
 h1 {
     text-align: center;
     position: relative;
-    top: 2em;
+    top: 1em;
 }
 
 /* Seção de tabela */
@@ -28,7 +28,7 @@ table {
     position: relative;
     text-align: center;
     left: 20em;
-    bottom: 28em;
+    bottom: 25em;
     box-sizing: border-box;
     border-collapse: collapse;
 }
@@ -66,7 +66,7 @@ table td {
     left: 320px;
     height: 40px;
     border: 1px solid rgb(0, 0, 0);
-    box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
 }
 
 .botao:hover, .botao:focus {
@@ -83,4 +83,51 @@ table td {
 
 #excluir {
     left: 430px;
+}
+
+#gerar {
+    left: 330px;
+    top: -100px;
+}
+
+#nome-vendedor {
+    position: relative;
+    text-align: left;
+    left: 20em;
+    bottom: 25em;
+}
+
+#input-nome {
+    position: relative;
+    text-align: left;
+    left: 10em;
+    bottom: 23em;
+}
+
+#data-venda {
+    position: relative;
+    text-align: left;
+    left: 17em;
+    bottom: 25em;
+}
+
+#data-relatorio {
+    position: relative;
+    text-align: left;
+    left: 40em;
+    bottom: 27em;
+}
+
+#input-data {
+    position: relative;
+    text-align: left;
+    left: 33em;
+    bottom: 25em;
+}
+
+#combo-vendedor {
+    position: relative;
+    text-align: left;
+    left: 20em;
+    bottom: 20em;
 }
