@@ -1,0 +1,16 @@
+/* Seção para rodapés  */
+
+footer {
+    background-color: #000;
+    color: #FFF;
+    padding: 0.3em;
+    bottom: 0;
+    position: absolute;
+    min-width: 100%;
+}
+
+img {
+    position: absolute;
+    left: 25em;
+    bottom: 15em;
+}

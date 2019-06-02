@@ -1,0 +1,86 @@
+/* Seção para barra de navegação lateral */
+
+ul {
+    margin: 5% 1%;
+    padding: 0.5% 2%;
+    list-style: none;
+    width: 18%;
+    text-align: center;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+#link-menu:hover, main a:focus {
+    color: red;
+}
+
+/* Seção de títulos */
+
+h1 {
+    text-align: center;
+    position: relative;
+    top: 2em;
+}
+
+/* Seção de tabela */
+
+table {
+    position: relative;
+    text-align: center;
+    left: 20em;
+    bottom: 28em;
+    box-sizing: border-box;
+    border-collapse: collapse;
+}
+
+thead {
+    background-color: rgba(71, 68, 68, 0.973);
+    text-align: center;
+    color: #FFF;
+}
+
+table th {
+    border: 1px solid #CCC;
+    padding: 10px;
+}
+
+table tr {
+    border: 1px solid #CCC;
+    width: 180px;
+    height: 40px;
+    padding: 10px;
+}
+
+table td {
+    width: 180px;
+    height: 40px;
+    padding: 10px;
+    border: 1px solid #CCC;
+}
+
+/* Seção de Botões */
+
+.botao {
+    position: relative;
+    top: 35px;
+    left: 320px;
+    height: 40px;
+    border: 1px solid rgb(0, 0, 0);
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+}
+
+.botao:hover, .botao:focus {
+    color: red;
+}
+
+#cadastrar {
+    left: 330px;
+}
+
+#alterar {
+    left: 380px;
+}
+
+#excluir {
+    left: 430px;
+}
