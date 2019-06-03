@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
+<html lang="pt-BR">
+
 <head>
     <title>VENDEDORES | CADPRO</title>
     <meta charset="UTF-8">
@@ -15,7 +17,7 @@
 </head>
 
 <body>
-    <h1>CADASTRAR VENDEDOR</h1>
+    <h1>ALTERAR VENDEDOR</h1>
 
     <!-- Barra de Navegação Lateral -->
     <nav id="menu" class=" navbar-light ">
@@ -26,12 +28,12 @@
                     CadPro
                 </a>
             </li>
-            <li><a id="link-menu" class="nav-link navbar-brand" href="index.html">Início</a></li>
-            <li><a id="link-menu" class="nav-link navbar-brand" href="vendas.html">Vendas</a></li>
-            <li><a id="link-menu" class="nav-link navbar-brand" href="vendedores.html">Vendedores</a></li>
-            <li><a id="link-menu" class="nav-link navbar-brand" href="produtos.html">Produtos</a></li>
-            <li><a id="link-menu" class="nav-link navbar-brand" href="relatorios.html">Relatórios</a></li>
-            <li><a id="link-menu" class="nav-link navbar-brand" href="redireciona.html">Sair</a></li>
+            <li><a id="link-menu" class="nav-link navbar-brand" href="index.jsp">Início</a></li>
+            <li><a id="link-menu" class="nav-link navbar-brand" href="vendas.jsp">Vendas</a></li>
+            <li><a id="link-menu" class="nav-link navbar-brand" href="vendedores.jsp">Vendedores</a></li>
+            <li><a id="link-menu" class="nav-link navbar-brand" href="produtos.jsp">Produtos</a></li>
+            <li><a id="link-menu" class="nav-link navbar-brand" href="relatorios.jsp">Relatórios</a></li>
+            <li><a id="link-menu" class="nav-link navbar-brand" href="redireciona.jsp">Sair</a></li>
         </ul>
     </nav>
 
@@ -71,7 +73,7 @@
 
     </section>
     <!-- Seção de Botões -->
-    <button class="botao" id="cadastrar" onclick="window.location='vendedores.html';">CADASTRAR</button>
+    <button class="botao" id="alterar" onclick="window.location='vendedores.html';">ALTERAR</button>
     <button class="botao" id="cancelar" onclick="window.location='vendedores.html';">CANCELAR</button>
 
 </body>

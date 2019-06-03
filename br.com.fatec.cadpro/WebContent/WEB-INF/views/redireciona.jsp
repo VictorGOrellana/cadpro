@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="css/bootstrap-reboot.min.css.map">
     <link rel="stylesheet" href="css/bootstrap.min.css.map">
     <link rel="stylesheet" type="text/css" href="css/redireciona.css">
-    <meta http-equiv="refresh" content=3;url="login.html">
+    <meta http-equiv="refresh" content=3;url="login.jsp">
 </head>
 
 <body>

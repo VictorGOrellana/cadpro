@@ -38,25 +38,26 @@
 <body>
 	<!-- Seção de login -->
 	<section>
+		<form action="logar" method='post'>
 		<img src="imagens/logo-index.png">
+		<
 		<div class="form-group">
 			<label for="">Digite seu CPF</label>
 			<p>
-				<input type="text" name="cpf" onkeydown="javascript: fMasc( this, mCPF );" placeholder="Ex.: 000.000.000-00" maxlength="14" required>
+				<input type="text" name="cpf" onkeydown="javascript: fMasc( this, mCPF );" placeholder="Ex.: 000.000.000-00" maxlength="14" required id="idCpf">
 			</p>
 			<small id="emailHelp" class="form-text text-muted">Digite somente os números.</small>
 		</div>
 		<div class="form-group">
 			<label for="exampleInputPassword1">Digite sua Senha</label>
 			<p>
-				<input type="password" placeholder="**********" maxlength="12"	required>
+				<input type="password" placeholder="**********" maxlength="12"	required id="idPass" name="senha">
 			</p>
 		</div>
 		<p>
-	
-		
-			<button type="submit" class="btn btn-primary" onclick="window.location='index.jsp';">Entrar</button>
+			<button type="submit" class="btn btn-primary" >Entrar</button>
 		</p>
+		</form>
 	</section>
 
 	<!-- Seção para Rodapé -->

@@ -16,10 +16,11 @@ public class ConnectionSingleton {
 	private static final String JDBC_PASS = "cadpro";
 	boolean conectado = false; 
 	
-	private ConnectionSingleton() throws GenericDAOException   {
+	public ConnectionSingleton() throws GenericDAOException   {
 		try {
 			Class.forName("org.mariadb.jdbc.Driver");
 			con = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASS);
+			conectado = true; 
 			if(!conectado){
 				throw new GenericDAOException();
 			}
@@ -30,13 +31,13 @@ public class ConnectionSingleton {
 	}
 	
 	public static ConnectionSingleton getInstancy() {
-		if (instancy == null) {
+		
 			try {
 				instancy = new ConnectionSingleton();
 			} catch  (Throwable e) {
 				e.printStackTrace();
 			}
-		}
+		
 		return instancy;	
 	}
 	 

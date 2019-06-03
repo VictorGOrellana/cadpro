@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    <h1>EXCLUIR PRODUTO</h1>
+    <h1>CADASTRAR PRODUTO</h1>
 
     <!-- Barra de Navegação Lateral -->
     <nav id="menu" class=" navbar-light ">
@@ -26,12 +26,12 @@
                     CadPro
                 </a>
             </li>
-            <li><a id="link-menu" class="nav-link navbar-brand" href="index.html">Início</a></li>
-            <li><a id="link-menu" class="nav-link navbar-brand" href="vendas.html">Vendas</a></li>
-            <li><a id="link-menu" class="nav-link navbar-brand" href="vendedores.html">Vendedores</a></li>
-            <li><a id="link-menu" class="nav-link navbar-brand" href="produtos.html">Produtos</a></li>
-            <li><a id="link-menu" class="nav-link navbar-brand" href="relatorios.html">Relatórios</a></li>
-            <li><a id="link-menu" class="nav-link navbar-brand" href="redireciona.html">Sair</a></li>
+          	 <li><a id="link-menu" class="nav-link navbar-brand" href="index.jsp">Início</a></li>
+            <li><a id="link-menu" class="nav-link navbar-brand" href="vendas.jsp">Vendas</a></li>
+            <li><a id="link-menu" class="nav-link navbar-brand" href="vendedores.jsp">Vendedores</a></li>
+            <li><a id="link-menu" class="nav-link navbar-brand" href="produtos.jsp">Produtos</a></li>
+            <li><a id="link-menu" class="nav-link navbar-brand" href="relatorios.jsp">Relatórios</a></li>
+            <li><a id="link-menu" class="nav-link navbar-brand" href="redireciona.jsp">Sair</a></li>
         </ul>
     </nav>
 
@@ -55,8 +55,8 @@
 
     </section>
     <!-- Seção de Botões -->
-    <button class="botao" id="excluir" onclick="window.location='produtos.html';">EXCLUIR</button>
-    <button class="botao" id="cancelar" onclick="window.location='produtos.html';">CANCELAR</button>
+    <button class="botao" id="cadastrar" onclick="window.location='produtos.jsp';">CADASTRAR</button>
+    <button class="botao" id="cancelar" onclick="window.location='produtos.jsp';">CANCELAR</button>
 
 </body>
 

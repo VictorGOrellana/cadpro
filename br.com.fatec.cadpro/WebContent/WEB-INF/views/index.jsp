@@ -21,7 +21,7 @@
     <nav id="menu" class=" navbar-light ">
         <ul id="nav">
             <li>
-                <a id="logo-menu" class="navbar-brand" href="index.html">
+                <a id="logo-menu" class="navbar-brand" href="index.jsp">
                     <img src="imagens/icon.png" width="45" height="30" class="d-inline-block align-top" alt="">
                     CadPro
                 </a>

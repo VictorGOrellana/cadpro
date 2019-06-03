@@ -4,7 +4,7 @@
 <html lang="pt-BR">
 
 <head>
-    <title>RELATORIOS | CADPRO</title>
+    <title>VENDEDORES | CADPRO</title>
     <meta charset="UTF-8">
     <link rel="icon" href="./imagens/logo-icon.jpeg">
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -17,23 +17,23 @@
 </head>
 
 <body>
-    <h1>RELATÓRIOS</h1>
+    <h1>VENDEDORES</h1>
 
     <!-- Barra de Navegação Lateral -->
     <nav id="menu" class=" navbar-light ">
         <ul id="nav">
             <li>
-                <a id="logo-menu" class="navbar-brand" href="index.html">
+                <a id="logo-menu" class="navbar-brand" href="index.jsp">
                     <img src="imagens/icon.png" width="45" height="30" class="d-inline-block align-top" alt="">
                     CadPro
                 </a>
             </li>
-            <li><a id="link-menu" class="nav-link navbar-brand" href="index.html">Início</a></li>
-            <li><a id="link-menu" class="nav-link navbar-brand" href="vendas.html">Vendas</a></li>
-            <li><a id="link-menu" class="nav-link navbar-brand" href="vendedores.html">Vendedores</a></li>
-            <li><a id="link-menu" class="nav-link navbar-brand" href="produtos.html">Produtos</a></li>
-            <li><a id="link-menu" class="nav-link navbar-brand" href="relatorios.html">Relatórios</a></li>
-            <li><a id="link-menu" class="nav-link navbar-brand" href="redireciona.html">Sair</a></li>
+             <li><a id="link-menu" class="nav-link navbar-brand" href="index.jsp">Início</a></li>
+            <li><a id="link-menu" class="nav-link navbar-brand" href="vendas.jsp">Vendas</a></li>
+            <li><a id="link-menu" class="nav-link navbar-brand" href="vendedores.jsp">Vendedores</a></li>
+            <li><a id="link-menu" class="nav-link navbar-brand" href="produtos.jsp">Produtos</a></li>
+            <li><a id="link-menu" class="nav-link navbar-brand" href="relatorios.jsp">Relatórios</a></li>
+            <li><a id="link-menu" class="nav-link navbar-brand" href="redireciona.jsp">Sair</a></li>
         </ul>
     </nav>
 

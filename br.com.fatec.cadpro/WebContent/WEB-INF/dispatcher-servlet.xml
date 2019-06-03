@@ -1,5 +1,4 @@
-<beans
- xmlns="http://www.springframework.org/schema/beans"
+<beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:mvc="http://www.springframework.org/schema/mvc"
@@ -10,21 +9,29 @@
        http://www.springframework.org/schema/mvc
        http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
- 
- 
-    <mvc:annotation-driven />
-	<context:component-scan base-package="controller"/>
-	
- 
-	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		
+
+
+	<mvc:annotation-driven />
+	<context:component-scan
+		base-package="br.com.fatec.cadpro.controller" />
+
+
+	<mvc:resources mapping="/css/**" location="/css/" />
+	<mvc:resources mapping="/imagens/**" location="/imagens/" />
+
+	<mvc:interceptors>
+          <bean 
+          class=
+          "br.com.fatec.cadpro.interceptor.AutorizadorInterceptor" />
+      </mvc:interceptors>
+
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix">
 			<value>/WEB-INF/views/</value>
 		</property>
-		
 		<property name="suffix">
 			<value>.jsp</value>
 		</property>
 	</bean>
-	
 </beans>
