@@ -4,7 +4,7 @@
 <html lang="pt-BR">
 
 <head>
-    <title>REDIRECIONAMENTO | CADPRO</title>
+    <title> Logout | CADPRO</title>
     <meta charset="UTF-8">
     <link rel="icon" href="./imagens/logo-icon.jpeg">
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -14,10 +14,11 @@
     <link rel="stylesheet" href="css/bootstrap-reboot.min.css.map">
     <link rel="stylesheet" href="css/bootstrap.min.css.map">
     <link rel="stylesheet" type="text/css" href="css/redireciona.css">
-    <meta http-equiv="refresh" content=3;url="login.jsp">
+    <meta http-equiv="refresh" content=3;url="login">
 </head>
 
 <body>
+	
     <section>
         <img src="imagens/redirecionamento.jpg">
     </section>

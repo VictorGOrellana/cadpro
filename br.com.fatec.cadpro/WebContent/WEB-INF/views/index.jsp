@@ -33,7 +33,7 @@
             <li><a id="link-menu" class="nav-link navbar-brand" href="#">Estoque</a></li>
             <li><a id="link-menu" class="nav-link navbar-brand" href="#">Relatórios</a></li>
             <li><a id="link-menu" class="nav-link navbar-brand" href="#">Fechar Comissão</a></li>
-            <li><a id="link-menu" class="nav-link navbar-brand" href="redireciona.jsp">Sair</a></li>
+            <li><a id="link-menu" class="nav-link navbar-brand" href="redireciona">Sair</a></li>
         </ul>
     </nav>
 

@@ -19,11 +19,6 @@
 	<mvc:resources mapping="/css/**" location="/css/" />
 	<mvc:resources mapping="/imagens/**" location="/imagens/" />
 
-	<mvc:interceptors>
-          <bean 
-          class=
-          "br.com.fatec.cadpro.interceptor.AutorizadorInterceptor" />
-      </mvc:interceptors>
 
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -34,4 +29,12 @@
 			<value>.jsp</value>
 		</property>
 	</bean>
+	
+	
+	<mvc:interceptors>
+          <bean 
+          class=
+          "br.com.fatec.cadpro.interceptor.AutorizadorInterceptor" />
+      </mvc:interceptors>
+	
 </beans>
