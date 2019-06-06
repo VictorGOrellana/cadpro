@@ -20,6 +20,7 @@ h1 {
     text-align: center;
     position: relative;
     top: 1em;
+    margin-bottom: 3em;
 }
 
 /* Seção de Botões */
@@ -46,7 +47,7 @@ h1 {
 }
 
 #alterar {
-    left: 380px;
+    left: -300px;
 }
 
 #visualizar {
@@ -54,7 +55,7 @@ h1 {
 }
 
 #cancelar {
-    left: 430px;
+    left: -200px;
 }
 
 #cod-produto {
@@ -74,7 +75,7 @@ h1 {
 #desc-produto {
     position: relative;
     text-align: left;
-    left: 15em;
+    left: 14em;
     bottom: 25em;
 }
 
@@ -116,7 +117,7 @@ h1 {
 #precocusto-produto {
     position: relative;
     text-align: left;
-    left: -53em;
+    left: -48em;
     bottom: 18em;
 }
 
@@ -130,7 +131,7 @@ h1 {
 #precovenda-produto {
     position: relative;
     text-align: left;
-    left: 23em;
+    left: 22em;
     bottom: 20em;
 }
 
@@ -144,7 +145,7 @@ h1 {
 #qntd-produto {
     position: relative;
     text-align: left;
-    left: 18em;
+    left: 17em;
     bottom: 20em;
 }
 

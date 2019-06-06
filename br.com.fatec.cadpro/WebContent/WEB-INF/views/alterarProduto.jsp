@@ -36,29 +36,31 @@
     </nav>
 
     <!-- Seção de Campos Produto -->
-    <section>
-
+    
+  		<form action="alteraProd" method="post">
+		
+		<label id="id-produto">ID PRODUTO</label>
+        <input type="number" id="input-id" name="idProduto">
         <label id="cod-produto">COD. PRODUTO</label>
-        <input type="input" id="input-cod" name="input-cod">
+        <input type="text" id="input-cod" name="codProduto">
         <label id="desc-produto">DESCRIÇÃO</label>
-        <input type="input" id="input-desc" name="input-desc">
+        <input type="text" id="input-desc" name="descricao">
         <label id="coduni-produto">COD. UNIDADE</label>
-        <input type="input" id="input-coduni" name="input-coduni">
+        <input type="number" id="input-coduni" name="codUnidade">
         <label id="codtipo-produto">COD. TIPO</label>
-        <input type="input" id="input-codtipo" name="input-codtipo">
+        <input type="number" id="input-codtipo" name="codTipo">
         <label id="precocusto-produto">PREÇO CUSTO</label>
-        <input type="input" id="input-precocusto" name="input-precocusto">
+        <input type="number" id="input-precocusto" name="precoCusto">
         <label id="precovenda-produto">PREÇO VENDA</label>
-        <input type="input" id="input-precovenda" name="input-precovenda">
+        <input type="number" id="input-precovenda" name="precoVenda">
         <label id="qntd-produto">QUANTIDADE</label>
-        <input type="input" id="input-qntd" name="input-qntd">
+        <input type="number" id="input-qntd" name="quantidade">
 
-    </section>
-    <!-- Seção de Botões -->
-   	  <form action="alteraProd" method="post">
+
+   	
      	<button class="botao" id="alterar" type="submit">ALTERAR</button>
  		<button class="botao" id="cancelar" onclick="btnTeste">CANCELAR</button>
-  	  </form>
+  		</form>
 	
 </body>
 </html>

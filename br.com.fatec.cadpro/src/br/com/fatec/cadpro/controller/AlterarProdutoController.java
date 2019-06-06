@@ -1,6 +1,7 @@
 package br.com.fatec.cadpro.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -18,14 +19,16 @@ public class AlterarProdutoController {
 		return "alterarProduto";
 	}
 	
-	@RequestMapping("/alteraProd")
-	public void alteraProd(@RequestParam("input-cod") String codProduto,
-			@RequestParam("input-desc") String descricao 
-			,@RequestParam("input-coduni") int codUnidade
-			, @RequestParam("input-codtipo") int codTipo,
-			@RequestParam("input-precocusto") Double precoCusto,
-			@RequestParam("input-precovenda")Double precoVenda,
-			@RequestParam("input-qntd") int quantidade) throws GenericDAOException {
+	
+	@PostMapping("/alteraProd")
+	public String alteraProd(
+			@RequestParam("codProduto") String codProduto,
+			@RequestParam("descricao") String descricao,
+			@RequestParam("codUnidade") int codUnidade,
+			@RequestParam("codTipo") int codTipo,
+			@RequestParam("precoCusto") Double precoCusto,
+			@RequestParam("precoVenda")Double precoVenda,
+			@RequestParam("quantidade") int quantidade) throws GenericDAOException {
 		
 		Produto prod = new Produto();
 		
@@ -39,10 +42,12 @@ public class AlterarProdutoController {
 		prod.setPrecoVenda(precoVenda);
 		prod.setQuantidade(quantidade);
 		
-		
-			pDao.atualizarProduto(prod);
+			System.out.println("passemo ");
+			//alterar depois pro metodo de alterar
+			pDao.incluirProduto(prod);
+			return "alterarProduto" ;
 	
-		@Res
+		
 		
 	}
 	
