@@ -21,17 +21,17 @@
     <nav id="menu" class=" navbar-light ">
         <ul id="nav">
             <li>
-                <a id="logo-menu" class="navbar-brand" href="index.jsp">
+                <a id="logo-menu" class="navbar-brand" href="index">
                     <img src="imagens/icon.png" width="45" height="30" class="d-inline-block align-top" alt="">
                     CadPro
                 </a>
             </li>
-            <li><a id="link-menu" class="nav-link navbar-brand" href="index.jsp">Início</a></li>
-            <li><a id="link-menu" class="nav-link navbar-brand" href="vendas.jsp">Vendas</a></li>
-            <li><a id="link-menu" class="nav-link navbar-brand" href="vendedores.jsp">Vendedores</a></li>
-            <li><a id="link-menu" class="nav-link navbar-brand" href="produtos.jsp">Produtos</a></li>
-            <li><a id="link-menu" class="nav-link navbar-brand" href="relatorios.jsp">Relatórios</a></li>
-            <li><a id="link-menu" class="nav-link navbar-brand" href="redireciona.jsp">Sair</a></li>
+            <li><a id="link-menu" class="nav-link navbar-brand" href="index">Início</a></li>
+            <li><a id="link-menu" class="nav-link navbar-brand" href="vendas">Vendas</a></li>
+            <li><a id="link-menu" class="nav-link navbar-brand" href="vendedores">Vendedores</a></li>
+            <li><a id="link-menu" class="nav-link navbar-brand" href="produtos">Produtos</a></li>
+            <li><a id="link-menu" class="nav-link navbar-brand" href="relatorios">Relatórios</a></li>
+            <li><a id="link-menu" class="nav-link navbar-brand" href="redireciona">Sair</a></li>
         </ul>
     </nav>
 
@@ -39,24 +39,26 @@
     <section>
 
         <label id="cod-produto">COD. PRODUTO</label>
-        <input type="input" id="input-cod">
+        <input type="input" id="input-cod" name="input-cod">
         <label id="desc-produto">DESCRIÇÃO</label>
-        <input type="input" id="input-desc">
+        <input type="input" id="input-desc" name="input-desc">
         <label id="coduni-produto">COD. UNIDADE</label>
-        <input type="input" id="input-coduni">
+        <input type="input" id="input-coduni" name="input-coduni">
         <label id="codtipo-produto">COD. TIPO</label>
-        <input type="input" id="input-codtipo">
+        <input type="input" id="input-codtipo" name="input-codtipo">
         <label id="precocusto-produto">PREÇO CUSTO</label>
-        <input type="input" id="input-precocusto">
+        <input type="input" id="input-precocusto" name="input-precocusto">
         <label id="precovenda-produto">PREÇO VENDA</label>
-        <input type="input" id="input-precovenda">
+        <input type="input" id="input-precovenda" name="input-precovenda">
         <label id="qntd-produto">QUANTIDADE</label>
-        <input type="input" id="input-qntd">
+        <input type="input" id="input-qntd" name="input-qntd">
 
     </section>
     <!-- Seção de Botões -->
-    <button class="botao" id="alterar" onclick="window.location='produtos.jsp';">ALTERAR</button>
-    <button class="botao" id="cancelar" onclick="window.location='produtos.jsp';">CANCELAR</button>
-
+   	  <form action="alteraProd" method="post">
+     	<button class="botao" id="alterar" type="submit">ALTERAR</button>
+ 		<button class="botao" id="cancelar" onclick="btnTeste">CANCELAR</button>
+  	  </form>
+	
 </body>
 </html>

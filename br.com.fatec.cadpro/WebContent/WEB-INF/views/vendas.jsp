@@ -28,12 +28,12 @@
                     CadPro
                 </a>
             </li>
-            <li><a id="link-menu" class="nav-link navbar-brand" href="index.html">Início</a></li>
-            <li><a id="link-menu" class="nav-link navbar-brand" href="vendas.html">Vendas</a></li>
-            <li><a id="link-menu" class="nav-link navbar-brand" href="vendedores.html">Vendedores</a></li>
-            <li><a id="link-menu" class="nav-link navbar-brand" href="produtos.html">Produtos</a></li>
-            <li><a id="link-menu" class="nav-link navbar-brand" href="relatorios.html">Relatórios</a></li>
-            <li><a id="link-menu" class="nav-link navbar-brand" href="redireciona.html">Sair</a></li>
+            <li><a id="link-menu" class="nav-link navbar-brand" href="index">Início</a></li>
+            <li><a id="link-menu" class="nav-link navbar-brand" href="vendas">Vendas</a></li>
+            <li><a id="link-menu" class="nav-link navbar-brand" href="vendedores">Vendedores</a></li>
+            <li><a id="link-menu" class="nav-link navbar-brand" href="produtos">Produtos</a></li>
+            <li><a id="link-menu" class="nav-link navbar-brand" href="relatorios">Relatórios</a></li>
+            <li><a id="link-menu" class="nav-link navbar-brand" href="redireciona">Sair</a></li>
         </ul>
     </nav>
 

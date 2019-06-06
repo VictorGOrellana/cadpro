@@ -28,9 +28,13 @@ table {
     position: relative;
     text-align: center;
     left: 20em;
-    bottom: 28em;
+    bottom: 25em;
     box-sizing: border-box;
     border-collapse: collapse;
+}
+
+#tabela-produtos {
+	bottom: 25em;
 }
 
 thead {

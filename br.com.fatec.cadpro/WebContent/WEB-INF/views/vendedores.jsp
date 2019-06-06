@@ -23,17 +23,17 @@
     <nav id="menu" class=" navbar-light ">
         <ul id="nav">
             <li>
-                <a id="logo-menu" class="navbar-brand" href="index.jsp">
+                <a id="logo-menu" class="navbar-brand" href="index">
                     <img src="imagens/icon.png" width="45" height="30" class="d-inline-block align-top" alt="">
                     CadPro
                 </a>
             </li>
-             <li><a id="link-menu" class="nav-link navbar-brand" href="index.jsp">Início</a></li>
-            <li><a id="link-menu" class="nav-link navbar-brand" href="vendas.jsp">Vendas</a></li>
-            <li><a id="link-menu" class="nav-link navbar-brand" href="vendedores.jsp">Vendedores</a></li>
-            <li><a id="link-menu" class="nav-link navbar-brand" href="produtos.jsp">Produtos</a></li>
-            <li><a id="link-menu" class="nav-link navbar-brand" href="relatorios.jsp">Relatórios</a></li>
-            <li><a id="link-menu" class="nav-link navbar-brand" href="redireciona.jsp">Sair</a></li>
+             <li><a id="link-menu" class="nav-link navbar-brand" href="index">Início</a></li>
+            <li><a id="link-menu" class="nav-link navbar-brand" href="vendas">Vendas</a></li>
+            <li><a id="link-menu" class="nav-link navbar-brand" href="vendedores">Vendedores</a></li>
+            <li><a id="link-menu" class="nav-link navbar-brand" href="produtos">Produtos</a></li>
+            <li><a id="link-menu" class="nav-link navbar-brand" href="relatorios">Relatórios</a></li>
+            <li><a id="link-menu" class="nav-link navbar-brand" href="redireciona">Sair</a></li>
         </ul>
     </nav>
 
