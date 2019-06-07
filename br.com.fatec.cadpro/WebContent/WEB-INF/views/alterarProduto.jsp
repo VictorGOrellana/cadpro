@@ -1,9 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html >
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <title>PRODUTOS | CADPRO</title>
+  <title>PRODUTOS | CADPRO</title>
     <meta charset="UTF-8">
     <link rel="icon" href="./imagens/logo-icon.jpeg">
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -12,7 +12,10 @@
     <link rel="stylesheet" href="css/bootstrap-reboot.min.css">
     <link rel="stylesheet" href="css/bootstrap-reboot.min.css.map">
     <link rel="stylesheet" href="css/bootstrap.min.css.map">
-    <link rel="stylesheet" type="text/css" href="css/excluirProduto.css">
+    <link rel="stylesheet" type="text/css" href="css/manipulacaoProduto.css">
+<meta charset="ISO-8859-1">
+
+
 </head>
 <body>
  <h1>ALTERAR PRODUTO</h1>
@@ -36,31 +39,45 @@
     </nav>
 
     <!-- Seção de Campos Produto -->
-    
-  		<form action="alteraProd" method="post">
-		
-		<label id="id-produto">ID PRODUTO</label>
-        <input type="number" id="input-id" name="idProduto">
-        <label id="cod-produto">COD. PRODUTO</label>
-        <input type="text" id="input-cod" name="codProduto">
-        <label id="desc-produto">DESCRIÇÃO</label>
-        <input type="text" id="input-desc" name="descricao">
-        <label id="coduni-produto">COD. UNIDADE</label>
-        <input type="number" id="input-coduni" name="codUnidade">
-        <label id="codtipo-produto">COD. TIPO</label>
-        <input type="number" id="input-codtipo" name="codTipo">
-        <label id="precocusto-produto">PREÇO CUSTO</label>
-        <input type="number" id="input-precocusto" name="precoCusto">
-        <label id="precovenda-produto">PREÇO VENDA</label>
-        <input type="number" id="input-precovenda" name="precoVenda">
-        <label id="qntd-produto">QUANTIDADE</label>
-        <input type="number" id="input-qntd" name="quantidade">
+    <form id="section-cadastrar-produto" class="form-row">
 
-
-   	
-     	<button class="botao" id="alterar" type="submit">ALTERAR</button>
- 		<button class="botao" id="cancelar" onclick="btnTeste">CANCELAR</button>
-  		</form>
-	
+        <div class="col">
+            <label id="id-produto">ID PRODUTO</label>
+            <input type="number" id="idProduto">
+        </div>
+        <div class="col">
+            <label id="cod-produto">COD. PRODUTO</label>
+            <input type="text" id="codProduto">
+        </div>
+        <div class="col">
+            <label id="desc-produto">DESCRIÇÃO</label>
+            <input type="text" id="descricao">
+        </div>
+        <div class="col">
+            <label id="coduni-produto">COD. UNIDADE</label>
+            <input type="number" id="codUnidade">
+        </div>
+        <div class="col">
+            <label id="codtipo-produto">COD. TIPO</label>
+            <input type="number" id="codTipo">
+        </div>
+        <div class="col">
+            <label id="precocusto-produto">PREÇO CUSTO</label>
+            <input type="number" id="precoCusto">
+        </div>
+        <div class="col">
+            <label id="precovenda-produto">PREÇO VENDA</label>
+            <input type="number" id="precoVenda">
+        </div>
+        <div class="col">
+            <label id="qntd-produto">QUANTIDADE</label>
+            <p><input type="number" id="quantidade">
+        </div>
+    </form>
+    <!-- Seção de Botões -->
+    <section id="section-botoes">
+        <button class="botao" id="alterar" onclick="window.location='produtos.html';">ALTERAR</button>
+        <button class="botao" id="cancelar" onclick="window.location='produtos.html';">CANCELAR</button>
+    </section>
 </body>
 </html>

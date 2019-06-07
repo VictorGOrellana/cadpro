@@ -1,6 +1,4 @@
-/* Seção para barra de navegação lateral */
-
-ul {
+#nav {
     margin: 5% 1%;
     padding: 0.5% 2%;
     list-style: none;
@@ -18,8 +16,7 @@ ul {
 
 h1 {
     text-align: center;
-    position: relative;
-    top: 1em;
+    margin-top: 5%;
 }
 
 /* Seção de tabela */
@@ -27,8 +24,7 @@ h1 {
 table {
     position: relative;
     text-align: center;
-    left: 20em;
-    bottom: 26em;
+    margin: 1%;
     box-sizing: border-box;
     border-collapse: collapse;
 }
@@ -52,7 +48,7 @@ table tr {
 }
 
 table td {
-    width: 180px;
+    width: 400px;
     height: 40px;
     padding: 10px;
     border: 1px solid #CCC;
@@ -62,25 +58,37 @@ table td {
 
 .botao {
     position: relative;
-    top: 35px;
-    left: 320px;
     height: 40px;
+    top: 200px;
     border: 1px solid rgb(0, 0, 0);
-    box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+    margin: 1%;
 }
 
 .botao:hover, .botao:focus {
     color: red;
 }
 
-#cadastrar {
-    left: 330px;
+#section-botoes {
+    position: relative;
+    text-align: center;
 }
 
-#alterar {
-    left: 380px;
+#section-tabela{
+    position: absolute;
+    text-align: left;
+    top: 100%;
 }
 
-#excluir {
-    left: 430px;
+#section-efetuar-vendas {
+    position: absolute;
+    top: 25%;
+    left: 20%;
+    text-align: left;
+    margin: 1%;
+}
+
+div {
+    margin: 10px;
+    display: inline-block;
 }

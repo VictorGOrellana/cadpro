@@ -1,0 +1,47 @@
+#nav {
+    margin: 5% 1%;
+    padding: 0.5% 2%;
+    list-style: none;
+    width: 18%;
+    text-align: center;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+#link-menu:hover, main a:focus {
+    color: red;
+}
+
+/* Seção de títulos */
+
+h1 {
+    text-align: center;
+    margin-top: 5%;
+}
+
+#section-relatorio {
+    position: absolute;
+    top: 25%;
+    left: 40%;
+    text-align: left;
+    margin: 1%;
+}
+
+div {
+    margin: 10px;
+}
+
+/* Seção de Botões */
+
+.botao {
+    position: relative;
+    top: 80px;
+    height: 40px;
+    border: 1px solid rgb(0, 0, 0);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+    margin: 1%;
+}
+
+.botao:hover, .botao:focus {
+    color: red;
+}
