@@ -1,6 +1,7 @@
 package br.com.fatec.cadpro.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -22,26 +23,27 @@ public class VendasController {
 	 * Métodos que chamam páginas
 	 */
 	
-	@RequestMapping("/vendas")
-	public String  mostrarVendas(){
+	@RequestMapping("/acessoListarVendas")
+	public String  acessoTelaListarVendas(){
 	return "vendas";
 		
 	}
 	
-	@RequestMapping("/excluirVenda")
-	public String exluirVendas(){
+	@RequestMapping("/acessoExcluirVenda")
+	public String acessoTelaExluirVendas(){
 		return "excluirVenda";
 	}
 	
-	@RequestMapping("/alterarVenda")
-	public String alterarVendas(){
+	@RequestMapping("/acessoAlterarVenda")
+	public String acessoTelaAlterarVendas(){
 		return "alterarVenda";
 	}
 	
-	@RequestMapping("/efetuarVenda")
-	public String efetuarVenda() {
+	@RequestMapping("/acessoEfetuarVenda")
+	public String acessoTelaEfetuarVenda() {
 		return "efetuarVenda";
 	}
+	
 	
 	/**
 	 * Métodos de manipulação
@@ -61,15 +63,14 @@ public class VendasController {
 	public String adiciona(@RequestParam("numeroVenda") int numeroVenda, @RequestParam("codVen") int codVen 
 			, @RequestParam("parcelas") String parcelas ,@RequestParam("vlrTotal") double vlrTotal,
 			@RequestParam("quantidade") int quantidade ) throws GenericDAOException {
+
 		
-	
-	
-		
+		int parcela = validadorParcelado(parcelas);
 		
 		
 		venda.setNumeroVenda(numeroVenda);
 		venda.setCodVen(codVen);		
-//		venda.setParcelas(parcelas);
+		venda.setParcelas(parcela);
 		venda.setVlrTotal(vlrTotal);
 		venda.setQuantidade(quantidade);
 		
@@ -79,9 +80,44 @@ public class VendasController {
 		return "vendas";
 	};
 	
+	@RequestMapping("altVenda")
+	public String alterar(@RequestParam("idVenda") int idVenda, Model model ) throws GenericDAOException {
+		
 	
+		venda.setIdVenda(idVenda);	
+		venda = vDao.getVendas(venda); 
+		
+		
+		model.addAttribute("numeroVenda", venda.getIdVenda());
+		model.addAttribute("codVen", venda.getCodVen());
+		model.addAttribute("parcela", venda.getParcelas());
+		model.addAttribute("vlrTotal", venda.getVlrTotal());
+		model.addAttribute("quantidade", venda.getQuantidade());
+		
+		vDao.alterarVenda(venda);
+		
+		return "vendas";
+	}
 	
 	private int validadorParcelado(String parcelas) {
+		if(parcelas.equals("avista")) {
+			return 0;
+		}
+		
+		if(parcelas.equals("parcelado1")) {
+			return 2;
+		}
+		
+		if(parcelas.equals("parcelado2")) {
+			return 3;
+		}
+		if(parcelas.equals("parcelado3")) {
+			return 4;
+		}
+		if(parcelas.equals("parcelado4")) {
+			return 5;
+		}
+		
 		return 0;
 	}
 

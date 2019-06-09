@@ -55,10 +55,10 @@
             <select id="parc-vendedor" name="parcelas">
                 <option value="funcao">Selecione o método</option>
                 <option value="avista">Á VISTA </option>
-                <option value="parcelado2">PARCELADO 2X</option>
-                <option value="parcelado3">PARCELADO 3X</option>
-                <option value="parcelado4">PARCELADO 4X</option>
-                <option value="parcelado5">PARCELADO 5X</option>
+                <option value="parcelado1">PARCELADO 2X</option>
+                <option value="parcelado2">PARCELADO 3X</option>
+                <option value="parcelado3">PARCELADO 4X</option>
+                <option value="parcelado4">PARCELADO 5X</option>
             </select>
         </div>
         <div class="col">
