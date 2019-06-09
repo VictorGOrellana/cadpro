@@ -76,22 +76,9 @@ public class VendedorDAOImpl implements VendedorDAO {
 	public List<Vendedor> listarVendedor(Vendedor vendedor) {
 		List<Vendedor> lv = new ArrayList<Vendedor>();
 		try {
-			int i = 0; 
+			
 			PreparedStatement ps = con.prepareStatement(LISTAR_VENDEDOR);
-			ps.setInt(++i, vendedor.getCodVen());
-			ps.setString(++i, vendedor.getNome());
-			ps.setString(++i, vendedor.getEndereco());
-			ps.setString(++i, vendedor.getBairro());
-			ps.setString(++i, vendedor.getCidade());
-			ps.setString(++i, vendedor.getEstado());
-			ps.setString(++i, vendedor.getCep());
-			ps.setString(++i, vendedor.getCpf());
-			ps.setString(++i, vendedor.getRg());
-			ps.setString(++i, vendedor.getFone());
-			ps.setString(++i, vendedor.getEmail());
-			ps.setDate(++i, (Date) vendedor.getDataCad());
-			ps.setDate(++i, (Date) vendedor.getDataNasc());
-			ps.setDouble(++i, vendedor.getPorComissao());
+		
 			ResultSet rs = ps.executeQuery();
 
 			while (rs.next()) {

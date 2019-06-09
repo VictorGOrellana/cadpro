@@ -12,6 +12,22 @@ public class VendasController {
 		
 	}
 	
+	@RequestMapping("/excluirVenda")
+	public String exluirVendas(){
+		return "excluirVenda";
+	}
+	
+	@RequestMapping("/alterarVenda")
+	public String alterarVendas(){
+		return "alterarVenda";
+	}
+	
+	@RequestMapping("/efetuarVenda")
+	public String efetuarVenda() {
+		return "efetuarVenda";
+	}
+	
+	
 	
 	
 

@@ -24,6 +24,7 @@ public class LoginDAOImpl implements LoginDAO {
 			ResultSet rs = ps.executeQuery();
 			
 			if(rs.next()) {
+				
 				return true;	
 			}
 			
@@ -40,6 +41,11 @@ public class LoginDAOImpl implements LoginDAO {
 				
 		
 		
+	}
+	@Override
+	public Login getLogin(Login login) throws GenericDAOException {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 		

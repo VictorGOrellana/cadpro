@@ -26,8 +26,7 @@ public interface VendedorDAO {
 			"     PORCCOMISSAO = ? "
 			+ "   WHERE CODVEN = ? ;";	 
 	
-	public static final String  LISTAR_VENDEDOR = "SELECT  CODVEN , NOME , ENDERECO , BAIRRO , CIDADE , ESTADO , CEP , CPF , RG , FONE, EMAIL ,"
-			+ "										 DATACAD , DATANASC , PORCCOMISSAO FROM TB_VENDEDOR	WHERE NOME = ? ; ";
+	public static final String  LISTAR_VENDEDOR = "SELECT  * FROM TB_VENDEDOR ; ";
 	
 	
 	public static final String  getVendedor = "SELECT  CODVEN , NOME , ENDERECO , BAIRRO , CIDADE , ESTADO , CEP , CPF , RG , FONE, EMAIL ,"
