@@ -4,20 +4,20 @@ import java.util.Date;
 
 public class Vendedor {
 
-	public int codVen;
-	public String nome;
-	public String endereco;
-	public String bairro;
-	public String cidade;
-	public String estado;
-	public String cep;
-	public String cpf;
-	public String rg;
-	public String fone;
-	public String email;
-	public Date dataCad;
-	public Date dataNasc;
-	public double porComissao;
+	private int codVen;
+	private String nome;
+	private String endereco;
+	private String bairro;
+	private String cidade;
+	private String estado;
+	private String cep;
+	private String cpf;
+	private String rg;
+	private String fone;
+	private String email;
+	private Date dataCad;
+	private Date dataNasc;
+	private double porComissao;
 	
 	
 	public int getCodVen() {

@@ -37,25 +37,28 @@
     </nav>
 
     <!-- Seção das vendas -->
+   <form action="incVenda" method="post">
     <form id="section-efetuar-vendas" class="form-row">
         <div class="col">
-            <label id="labelid-venda">Id da Venda: </label>
-            <input type="text" id="id-venda">
+       
         </div>
         <div class="col">
             <label id="labelnum-venda">Número da Venda: </label>
-            <input type="text" id="num-venda">
+            <input type="text" id="num-venda" name="numeroVenda">
         </div>
         <div class="col">
             <label id="labelvendedor-venda">Vendedor: </label>
-            <input type="text" id="vendedor-venda">
+            <input type="text" id="vendedor-venda" name="codVen">
         </div>
         <div class="col">
             <label id="parcvendedor-venda">Parcelamento: </label>
-            <select id="parc-vendedor">
+            <select id="parc-vendedor" name="parcelas">
                 <option value="funcao">Selecione o método</option>
-                <option value="avista">COMISSÃO</option>
-                <option value="parcelado">VENDAS</option>
+                <option value="avista">Á VISTA </option>
+                <option value="parcelado2">PARCELADO 2X</option>
+                <option value="parcelado3">PARCELADO 3X</option>
+                <option value="parcelado4">PARCELADO 4X</option>
+                <option value="parcelado5">PARCELADO 5X</option>
             </select>
         </div>
         <div class="col">
@@ -65,7 +68,10 @@
         <div class="col">
             <label id="qntd-item">Quantidade: </label>
             <input type="text" id="qntd-venda">
-            <button class="botao-add" id="add-venda">ADD</button>
+            
+        </div>
+        <div style="display: inline-block">
+        <button class="botao-add" id="add-venda">ADD</button>
         </div>
         <div>
             <label id="total-item">Total: </label>
@@ -90,9 +96,10 @@
             </table>
         </div>
     </form>
-    <section id="section-botoes">
-        <button class="botao" id="finalizar-venda" onclick="window.location='vendas.html';">FINALIZAR</button>
+    
+        <button class="botao" id="finalizar-venda" type="submit">FINALIZAR</button>
+    </form>
         <button class="botao" id="cancelar-venda" onclick="window.location='vendas.html';">CANCELAR</button>
-    </section>
+  
 </body>
 </html>

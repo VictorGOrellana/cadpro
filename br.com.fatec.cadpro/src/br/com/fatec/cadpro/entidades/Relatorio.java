@@ -2,8 +2,8 @@ package br.com.fatec.cadpro.entidades;
 
 public class Relatorio {
 
-	public int codVen;
-	public double comissao;
+	private int codVen;
+	private double comissao;
 
 	public int getCodVen() {
 		return codVen;
