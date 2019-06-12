@@ -28,7 +28,7 @@
                     <div class="row">
                         
                             <div class="section-title text-center">
-                                <h3>Vendedores</h3>
+                                <h3>Produtos</h3>
                             </div><!-- end title -->
                             
                            <div class="table-responsive">
@@ -36,9 +36,9 @@
                                 <thead>
                                    <tr>
                                        <th> Código </th>
-                                       <th> Nome </th>
-                                       <th> CPF </th>
-                                       <th> Opção </th>
+                                       <th> Descrição </th>
+                                       <th> Valor </th>
+                                       <th> Quantidade </th>
                                   </tr>
                                 </thead>
                                  <tbody>

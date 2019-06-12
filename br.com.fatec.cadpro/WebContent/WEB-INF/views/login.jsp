@@ -38,7 +38,7 @@
     <section>
     <form action="logar" method='post'>
     
-        <img src="imagens/logo-index.png">
+        <img src="./imagens/logo-index.png">
         <div class="form-group">
             <label for="">Digite seu CPF</label>
             <p><input type="text" name="cpf" onkeydown="javascript: fMasc( this, mCPF );"

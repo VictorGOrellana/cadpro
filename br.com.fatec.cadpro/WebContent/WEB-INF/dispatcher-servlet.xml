@@ -18,8 +18,10 @@
 		base-package="br.com.fatec.cadpro.controller" />
 
 	<mvc:resources mapping="/css/**" location="/css/" />
+	<mvc:resources mapping="/images/**" location="/images/" />
 	<mvc:resources mapping="/imagens/**" location="/imagens/" />
-	
+	<mvc:resources mapping="/js/**" location="/images/" />
+	<mvc:resources mapping="/fonts/**" location="/fonts/" />
 
 
 	<bean

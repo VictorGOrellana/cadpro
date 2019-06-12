@@ -1,10 +1,15 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<c:import url="menu-bar.jsp"></c:import>
-<link rel="stylesheet" type="text/css" href="css/index.css">
+<c:import url="cabecalho.jsp"></c:import>
 
- <body id="body">
- <div id="msg_bemvindo" style=" position: relative; text-align: center; " ><h3>Olá!  Bem vindo ao Sistema CadPro.</h3> </div>
-    <!-- Seção para Rodapé -->
-   
-</body>
+    <section id="home" class="video-section js-height-full">
+            <div class="overlay"></div>
+            <div class="home-text-wrapper relative container">
+                <div class="home-message">
+                    <p>Bem Vindo ao Cadpro</p>
+                    <small>Sistema de gerenciamento de vendas em casas de material de construção</small>
+                
+                </div>
+            </div>
+            
+        </section>
 <c:import url="footer.jsp"></c:import>
