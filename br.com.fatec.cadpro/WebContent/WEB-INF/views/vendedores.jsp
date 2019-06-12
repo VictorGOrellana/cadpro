@@ -71,6 +71,9 @@
                 <% } %>
             </tbody>
                              </table>
+                            <div>
+		                             <button class="btn btn-default" id="anterior" onCLick='location.href="acessoCadastrarProduto"'>Incluir</button>
+		             </div>
 <!--						 	<div>
 		                             <button class="btn btn-default" id="anterior" disabled>Anterior</button>
 		                             <span id="numeracao"></span>

@@ -72,12 +72,11 @@ public class ProdutoDAOImpl implements ProdutoDAO {
 	}
 
 	public List<Produto> listarProdutos(Produto produto)throws GenericDAOException {
-		ArrayList<Produto> listaDeProdutos = new ArrayList<Produto>();
+		List<Produto> listaDeProdutos = new ArrayList<Produto>();
 		
 		try {
 			int i = 0; 
 			PreparedStatement ps = con.prepareStatement(LISTAR_PRODUTO);
-			ps.setString(++i,produto.getDescricao());
 			ResultSet rs = ps.executeQuery();
 			while (rs.next()) {
 				Produto p = new Produto();
@@ -104,7 +103,7 @@ public class ProdutoDAOImpl implements ProdutoDAO {
 		try {
 			int i = 0; 
 			PreparedStatement ps = con.prepareStatement(LISTAR_PRODUTO);
-			ps.setString(++i,produto.getDescricao());
+			ps.setInt(++i,produto.getIdProduto());
 			ResultSet rs = ps.executeQuery();
 			while (rs.next()) {
 				Produto p = new Produto();

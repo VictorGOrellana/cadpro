@@ -430,6 +430,7 @@ MEGA MENU
 .yamm .dropup,
 .yamm .dropdown {
     position: static;
+    display: inline-block;
 }
 
 .yamm .dropdown.yamm-fw {
@@ -1976,6 +1977,10 @@ FOOTER
 .footer p,
 .footer a {
     color: #aaa;
+}
+
+ul {
+	display:inline-block;
 }
 
 .footer a:hover {

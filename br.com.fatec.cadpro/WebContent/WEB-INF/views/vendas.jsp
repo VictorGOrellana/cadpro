@@ -33,61 +33,31 @@
                                    <tr>
                                        <th> Código </th>
                                        <th> Vendedor </th>
-                                       <th> Data </th>
+                                       <th> Parcelas </th>
                                        <th> Valor Total </th>
 									   <th> Opção </th>
                                    </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
+                                   		<form>
                                         <td>000001</th>
                                         <td>Joelma Mendes</td>
-                                        <td>25/10/2018</td>
+                                        <td>5</td>
                                         <td>R$1530</td>
 										<td align="center">
-										<button type="button"class="btn btn-default" onClick='location.href="formVendas.html"' id="anterior">Alterar</button>
-		                                    <button class="btn btn-default" id="proximo" disabled>Excluir</button>
+											  <button type="button" class="btn btn-default" onClick="location.href='acessoAlterarVenda'" value ="submit">Alterar</button>
+		                              		  <button type="button" class="btn btn-default" onClick="location.href='acessoExcluirVenda'" id="proximo" >Excluir</button>
+										</form>
 										</td>	
-                                    </tr> 
-									<tr>
-                                        <td>000002</th>
-                                        <td>Joelma Mendes</td>
-                                        <td>25/10/2018</td>
-                                        <td>R$1530</td>
-										<td align="center"><button class="btn btn-default" id="anterior" disabled>Alterar</button>
-		                                    <button class="btn btn-default" id="proximo" disabled>Excluir</button>
-										</td>	
-                                    </tr> 
-									<tr>
-                                        <td>000002</th>   
-                                        <td id="vendedor_joelma">Joelma Mendes</td>
-                                        <td>25/10/2018</td>
-                                        <td>R$1530</td>
-										<td align="center">
-											<button class="btn btn-default" id="anterior" disabled>Alterar</button>
-		                                    <button class="btn btn-default" id="proximo" disabled>Excluir</button>
-										</td>	
-                                    </tr> 
-									<tr>
-                                        <td>000002</th>
-                                        <td>Joelma Mendes</td>
-                                        <td>25/10/2018</td>
-                                        <td>R$1530</td>
-										<td align="center"><button class="btn btn-default" id="anterior" disabled>Alterar</button>
-		                                    <button class="btn btn-default" id="proximo" disabled>Excluir</button>
-										</td>	
-                                    </tr> 
-									<tr>
-                                        <td>000002</th>
-                                        <td>Joelma Mendes</td>
-                                        <td>25/10/2018</td>
-                                        <td>R$1530</td>
-										<td align="center"><button class="btn btn-default" id="anterior" disabled>Alterar</button>
-		                                    <button class="btn btn-default" id="proximo" disabled>Excluir</button>
-										</td>	
-                                    </tr> 
+									
+                                    </tr> 								
                                 </tbody>
                              </table>
+                             
+                             <div>
+		                             <button class="btn btn-default" id="anterior" onCLick='location.href="acessoCadastrarProduto"'>Incluir</button>
+		             </div>
 <!--						 	<div>
 		                             <button class="btn btn-default" id="anterior" disabled>Anterior</button>
 		                             <span id="numeracao"></span>

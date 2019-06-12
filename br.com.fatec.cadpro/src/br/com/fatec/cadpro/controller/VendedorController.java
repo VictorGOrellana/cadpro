@@ -25,7 +25,7 @@ public class VendedorController {
 
 	@RequestMapping("/acessoCadastrarVendedor")
 	public String acessoCadastrarVendedor() {
-		return "cadastrarVendedor";
+		return "incluirVendedor";
 	}
 
 	@RequestMapping("/acessoListarVendedores")
@@ -33,7 +33,10 @@ public class VendedorController {
 		return "vendedores";
 	}
 	
-	
+	@RequestMapping("/acessoExcluirVendedor")
+	public String acessoExcluirVendedor() {
+		return "excluirVendedor";
+	}	
 	
 	@RequestMapping("/excVendedor")
 	public String excVendedro(@RequestParam("codVen") int codVen) {
@@ -48,12 +51,11 @@ public class VendedorController {
 	}
 	
 	@RequestMapping("/incVendedor")
-	public String incVendedor(@RequestParam("codVen") int codVen, @RequestParam("nome") String nome, @RequestParam("endereco") String endereco,
+	public String incVendedor(@RequestParam("nome") String nome, @RequestParam("endereco") String endereco,
 								@RequestParam("bairro") String bairro, @RequestParam("cidade") String cidade, @RequestParam("estado") String estado,
 								@RequestParam("cep") String cep, @RequestParam("cpf") String cpf, @RequestParam("rg") String rg, @RequestParam("fone") String fone,
 								@RequestParam("email") String email, @RequestParam("dataCad") Date dataCad, @RequestParam("dataNasc") Date dataNasc, @RequestParam("porComissao") double porComissao) {
-		
-		vendedor.setCodVen(codVen);
+
 		vendedor.setNome(nome);
 		vendedor.setEndereco(endereco);
 		vendedor.setBairro(bairro);
@@ -70,7 +72,7 @@ public class VendedorController {
 		
 		vDAO.incluirVendedor(vendedor);
 		
-		return "cadastrarVendedor";
+		return "incluirVendedor";
 	}
 	
 	@RequestMapping("/altVendedor")

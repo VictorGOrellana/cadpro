@@ -1,5 +1,11 @@
 package br.com.fatec.cadpro.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -13,37 +19,45 @@ import br.com.fatec.cadpro.entidades.Produto;
 
 @Controller
 public class ProdutosController {
+	Produto prod = new Produto();
+	ProdutoDAO pDao = new ProdutoDAOImpl();
 
-	@RequestMapping("/produtos")
-	public String mostrarProdutos() {
+	@RequestMapping("/acessoListarProdutos")
+	public String acessoListarProdutos(Model model) throws GenericDAOException {
+		List<Produto> lista = new ArrayList<Produto>();
+
+		
+		pDao.listarProdutos(prod);
+		
+		model.addAttribute("LISTA", lista);
 		return "produtos";
 	}
 
-	@RequestMapping("/excluirProduto")
-	public String showExcProduto() {
+	@RequestMapping("/acessoExcluirProdutos")
+	public String acessoExcluirProdutos() {
 		return "excluirProduto";
 	}
 
-	@RequestMapping("/cadastrarProduto")
-	public String showCadProdutos() {
-		return "cadastrarProduto";
+	@RequestMapping("/acessoCadastrarProduto")
+	public String acessoCadastrarProduto() {
+		return "incluirProduto";
 	}
 
-	@RequestMapping("/alterarProduto")
-	public String mostrarAlterarProdutos() {
+	@RequestMapping("/acessoAlterarProduto")
+	public String acessoAlterarProduto(HttpServletRequest request) {
+		
+		System.out.println(request.getAttribute("codProduto"));
 		return "alterarProduto";
 	}
 
-	@PostMapping("/incluirProd")
-	public String incluirProd(@RequestParam("codProduto") String codProduto,
+	@PostMapping("/incProduto")
+	public String incProduto(@RequestParam("codProduto") String codProduto,
 			@RequestParam("descricao") String descricao, @RequestParam("codUnidade") int codUnidade,
 			@RequestParam("codTipo") int codTipo, @RequestParam("precoCusto") Double precoCusto,
-			@RequestParam("precoVenda") Double precoVenda, @RequestParam("quantidade") int quantidade)
+			@RequestParam("precoVenda") Double precoVenda, @RequestParam("quantidade") int quantidade ,Model model)
 			throws GenericDAOException {
 
-		Produto prod = new Produto();
-
-		ProdutoDAO pDao = new ProdutoDAOImpl();
+		
 
 		prod.setCodProduto(codProduto);
 		prod.setDescricao(descricao);
@@ -57,35 +71,31 @@ public class ProdutosController {
 		// alterar depois pro metodo de alterar
 		pDao.incluirProduto(prod);
 		
-		return "incluirProduto";
+		
+		
+		
+		return "produtos";
+		
+		
 
 	}
 
-	@PostMapping("/alteraProd")
-	public String alteraProd(@RequestParam("codProduto") String codProduto, @RequestParam("descricao") String descricao,
+	@PostMapping("/altProduto")
+	public String altProduto(@RequestParam("codProduto") String codProduto, @RequestParam("descricao") String descricao,
 			@RequestParam("codUnidade") int codUnidade, @RequestParam("codTipo") int codTipo,
 			@RequestParam("precoCusto") Double precoCusto, @RequestParam("precoVenda") Double precoVenda,
 			@RequestParam("quantidade") int quantidade, Model model) throws GenericDAOException {
 
-		Produto prod = getProd(codProduto);
-		
-		ProdutoDAO pDao = new ProdutoDAOImpl();
-		prod = pDao.getProduto(prod);
-		
 
-		
-		// alterar depois pro metodo de alterar
+	
 		pDao.atualizarProduto(prod);
 		return "alterarProduto";
 
 	}
 
-	@PostMapping("/excluirProd")
-	public String excluirProd(@RequestParam("codProduto") String codProduto, Model model) throws GenericDAOException {
-		
-		Produto prod = new Produto();
+	@PostMapping("/excProduto")
+	public String excProduto(@RequestParam("codProduto") String codProduto, Model model) throws GenericDAOException {
 
-		ProdutoDAO pDao = new ProdutoDAOImpl();
 
 		prod.setCodProduto(codProduto);
 		pDao.excluirProduto(prod);
@@ -98,17 +108,15 @@ public class ProdutosController {
 	}
 	
 
-	@PostMapping("/listarProd")
-	public String listarProd(@RequestParam("descricao") String descricao) throws GenericDAOException {
+	@PostMapping("/lisProduto")
+	public List<Produto> lisProduto(Model model) throws GenericDAOException {
+		List<Produto> lista = new ArrayList<Produto>();
+
 		
-		Produto prod = new Produto();
-
-		ProdutoDAO pDao = new ProdutoDAOImpl();
-
-		prod.setCodProduto(descricao);
 		pDao.listarProdutos(prod);
 		
-		return descricao;
+		model.addAttribute("LISTA", lista);
+		return lista;
 		
 		
 		
@@ -116,13 +124,10 @@ public class ProdutosController {
 	}
 	
 	@PostMapping("/getProd")
-	public Produto getProd(@RequestParam("codProduto") String codProduto) throws GenericDAOException {
+	public Produto getProd(int idProduto) throws GenericDAOException {
 		
-		Produto prod = new Produto();
 
-		ProdutoDAO pDao = new ProdutoDAOImpl();
-
-		prod.setCodProduto(codProduto);
+		prod.setIdProduto(idProduto);		
 		pDao.getProduto(prod);
 		
 		
@@ -136,11 +141,6 @@ public class ProdutosController {
 		
 	}
 	
-	
-
-	
-	
-	
-	
+		
 	
 }
