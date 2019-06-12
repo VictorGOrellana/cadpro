@@ -5,12 +5,15 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import javax.websocket.Session;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.context.annotation.RequestScope;
 
 import br.com.fatec.cadpro.dao.GenericDAOException;
 import br.com.fatec.cadpro.dao.ProdutoDAO;
@@ -23,13 +26,14 @@ public class ProdutosController {
 	ProdutoDAO pDao = new ProdutoDAOImpl();
 
 	@RequestMapping("/acessoListarProdutos")
-	public String acessoListarProdutos(Model model) throws GenericDAOException {
+	public String acessoListarProdutos(HttpServletRequest request , HttpServletResponse response) throws GenericDAOException {
+		
 		List<Produto> lista = new ArrayList<Produto>();
-
+		HttpSession session = request.getSession();
 		
-		pDao.listarProdutos(prod);
+		 lista = pDao.listarProdutos(prod);
 		
-		model.addAttribute("LISTA", lista);
+		session.setAttribute("LISTA",lista);
 		return "produtos";
 	}
 
@@ -44,12 +48,29 @@ public class ProdutosController {
 	}
 
 	@RequestMapping("/acessoAlterarProduto")
-	public String acessoAlterarProduto(HttpServletRequest request) {
+	public String acessoAlterarProduto(HttpServletRequest request ,Model model,  HttpServletResponse response) throws GenericDAOException {
+		HttpSession session = request.getSession();
 		
-		System.out.println(request.getAttribute("codProduto"));
+		 Object s = session.getAttribute("IDPRODUTO");
+		
+		 System.out.println(session.getAttribute("IDPRODUTO"));
+		 
+		 prod.setIdProduto(Integer.parseInt(s.toString()));
+		
+		
+		 prod = getProd(prod.getIdProduto());
+		 
+		 
+		model.addAttribute("idProduto", prod.getIdProduto());
+		
+		
+		
 		return "alterarProduto";
 	}
 
+	
+	
+	
 	@PostMapping("/incProduto")
 	public String incProduto(@RequestParam("codProduto") String codProduto,
 			@RequestParam("descricao") String descricao, @RequestParam("codUnidade") int codUnidade,
@@ -74,7 +95,7 @@ public class ProdutosController {
 		
 		
 		
-		return "produtos";
+		return "acessoListarProdutos";
 		
 		
 

@@ -102,7 +102,7 @@ public class ProdutoDAOImpl implements ProdutoDAO {
 	public Produto getProduto(Produto produto)throws GenericDAOException {
 		try {
 			int i = 0; 
-			PreparedStatement ps = con.prepareStatement(LISTAR_PRODUTO);
+			PreparedStatement ps = con.prepareStatement(GET_PRODUTO);
 			ps.setInt(++i,produto.getIdProduto());
 			ResultSet rs = ps.executeQuery();
 			while (rs.next()) {

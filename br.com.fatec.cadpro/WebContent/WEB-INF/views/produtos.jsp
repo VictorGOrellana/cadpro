@@ -55,6 +55,7 @@
 
 
 						<% for ( Produto p : lista ) {%>
+							<% session.setAttribute("IDPRODUTO",new Integer(p.getIdProduto())); %>
 							<tr>
 								<td><%= p.getIdProduto() %></td>
 								<td><%= p.getCodProduto() %></td>

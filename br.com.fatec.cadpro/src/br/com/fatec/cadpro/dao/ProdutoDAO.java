@@ -10,7 +10,7 @@ public interface ProdutoDAO {
 	public static final String INSERIR_PRODUTO =" INSERT INTO TB_PRODUTO ( CODPRODUTO , DESCRICAO , CODUNIDADE , "
 			+ "CODTIPO , PRECOCUSTO , PRECOVENDA , QUANTIDADE) VALUES ( ? ,? ,? ,? ,? ,? ,? );  ";
 	
-	public static final String LISTAR_PRODUTO = "SELECT * FROM TB_PRODUTO";
+	public static final String LISTAR_PRODUTO = "SELECT * FROM TB_PRODUTO ";
 	
 	public static final String EXCLUIR_PRODUTO = " DELETE FROM TB_PRODUTO WHERE IDPRODUTO = ? ;";
 
