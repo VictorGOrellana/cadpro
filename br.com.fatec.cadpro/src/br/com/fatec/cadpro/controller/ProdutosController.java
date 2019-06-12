@@ -53,15 +53,14 @@ public class ProdutosController {
 		
 		 Object s = session.getAttribute("IDPRODUTO");
 		
-		 System.out.println(session.getAttribute("IDPRODUTO"));
+		prod.setIdProduto(Integer.parseInt(s.toString()));
 		 
-		 prod.setIdProduto(Integer.parseInt(s.toString()));
+			
+		Produto prodTela =  getProd(prod.getIdProduto());
+		 
+		 
+		session.setAttribute("CADASTROBD",prod);
 		
-		
-		 prod = getProd(prod.getIdProduto());
-		 
-		 
-		model.addAttribute("idProduto", prod.getIdProduto());
 		
 		
 		
@@ -147,9 +146,9 @@ public class ProdutosController {
 	@PostMapping("/getProd")
 	public Produto getProd(int idProduto) throws GenericDAOException {
 		
-
-		prod.setIdProduto(idProduto);		
-		pDao.getProduto(prod);
+		prod.setIdProduto(idProduto);
+			
+		prod = pDao.getProduto(prod);
 		
 		
 		
