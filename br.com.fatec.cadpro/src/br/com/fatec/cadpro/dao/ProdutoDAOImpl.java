@@ -42,6 +42,8 @@ public class ProdutoDAOImpl implements ProdutoDAO {
 			int i = 0 ; 
 			PreparedStatement ps = con.prepareStatement(EXCLUIR_PRODUTO);
 			ps.setInt(++i,produto.getIdProduto());
+			ps.executeUpdate();
+			ps.close();
 		} catch (SQLException e) {
 			throw new GenericDAOException(e);
 		}

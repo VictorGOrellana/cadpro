@@ -8,13 +8,15 @@
 <title>Excluir Produto</title>
 </head>
 <body>
+		<%
+			Produto prodAtual = (Produto) session.getAttribute("CADASTROBD");
+		%>
+
 	<DIV id="gg_grp_tela" style="position: relative;">
 
 		<h1>Exclusão Produto</h1>
 
-		<%
-			Produto prodAtual = (Produto) session.getAttribute("CADASTROBD");
-		%>
+		
 		<form action="excProduto" method="post">
 			<DIV id="grp_idproduto"
 				style="position: relative; margin-top: 30px; margin-left: 20px; display: inline-block;">

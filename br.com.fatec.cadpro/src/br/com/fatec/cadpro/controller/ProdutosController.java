@@ -107,9 +107,9 @@ public class ProdutosController {
 	}
 
 	@PostMapping("/excProduto")
-	public String excProduto(@RequestParam("idProduto") String idProduto) throws GenericDAOException {
+	public String excProduto(@RequestParam("idProduto") int idProduto) throws GenericDAOException {
 
-		prod.setCodProduto(idProduto);
+		prod.setIdProduto(idProduto);
 		pDao.excluirProduto(prod);
 
 		// model.addAttribute("codProduto", codProduto);
