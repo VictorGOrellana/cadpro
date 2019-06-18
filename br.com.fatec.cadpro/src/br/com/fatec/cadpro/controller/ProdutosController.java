@@ -26,19 +26,26 @@ public class ProdutosController {
 	ProdutoDAO pDao = new ProdutoDAOImpl();
 
 	@RequestMapping("/acessoListarProdutos")
-	public String acessoListarProdutos(HttpServletRequest request , HttpServletResponse response) throws GenericDAOException {
-		
+	public String acessoListarProdutos(HttpServletRequest request, HttpServletResponse response)
+			throws GenericDAOException {
+
 		List<Produto> lista = new ArrayList<Produto>();
 		HttpSession session = request.getSession();
-		
-		 lista = pDao.listarProdutos(prod);
-		
-		session.setAttribute("LISTA",lista);
+
+		lista = pDao.listarProdutos(prod);
+
+		session.setAttribute("LISTA", lista);
 		return "produtos";
 	}
 
 	@RequestMapping("/acessoExcluirProdutos")
-	public String acessoExcluirProdutos() {
+	public String acessoExcluirProdutos(HttpServletRequest request, HttpServletResponse response) throws GenericDAOException {
+		HttpSession session = request.getSession();
+		Object s = session.getAttribute("IDPRODUTO");
+		prod.setIdProduto(Integer.parseInt(s.toString()));
+		System.out.println(prod.getIdProduto());
+		Produto prodTela = getProd(prod.getIdProduto());
+		session.setAttribute("CADASTROBD", prodTela);
 		return "excluirProduto";
 	}
 
@@ -48,36 +55,23 @@ public class ProdutosController {
 	}
 
 	@RequestMapping("/acessoAlterarProduto")
-	public String acessoAlterarProduto(HttpServletRequest request ,Model model,  HttpServletResponse response) throws GenericDAOException {
+	public String acessoAlterarProduto(HttpServletRequest request , HttpServletResponse response)
+			throws GenericDAOException {
+
 		HttpSession session = request.getSession();
-		
-		 Object s = session.getAttribute("IDPRODUTO");
-		
+		Object s = session.getAttribute("IDPRODUTO");
 		prod.setIdProduto(Integer.parseInt(s.toString()));
-		 
-			
-		Produto prodTela =  getProd(prod.getIdProduto());
-		 
-		 
-		session.setAttribute("CADASTROBD",prod);
-		
-		
-		
-		
+		System.out.println(prod.getIdProduto());
+		Produto prodTela = getProd(prod.getIdProduto());
+		session.setAttribute("CADASTROBD", prodTela);
 		return "alterarProduto";
 	}
 
-	
-	
-	
 	@PostMapping("/incProduto")
-	public String incProduto(@RequestParam("codProduto") String codProduto,
-			@RequestParam("descricao") String descricao, @RequestParam("codUnidade") int codUnidade,
-			@RequestParam("codTipo") int codTipo, @RequestParam("precoCusto") Double precoCusto,
-			@RequestParam("precoVenda") Double precoVenda, @RequestParam("quantidade") int quantidade ,Model model)
-			throws GenericDAOException {
-
-		
+	public String incProduto(@RequestParam("codProduto") String codProduto, @RequestParam("descricao") String descricao,
+			@RequestParam("codUnidade") int codUnidade, @RequestParam("codTipo") int codTipo,
+			@RequestParam("precoCusto") Double precoCusto, @RequestParam("precoVenda") Double precoVenda,
+			@RequestParam("quantidade") int quantidade, Model model) throws GenericDAOException {
 
 		prod.setCodProduto(codProduto);
 		prod.setDescricao(descricao);
@@ -87,16 +81,9 @@ public class ProdutosController {
 		prod.setPrecoVenda(precoVenda);
 		prod.setQuantidade(quantidade);
 
-		
-		// alterar depois pro metodo de alterar
 		pDao.incluirProduto(prod);
-		
-		
-		
-		
+
 		return "acessoListarProdutos";
-		
-		
 
 	}
 
@@ -104,63 +91,51 @@ public class ProdutosController {
 	public String altProduto(@RequestParam("codProduto") String codProduto, @RequestParam("descricao") String descricao,
 			@RequestParam("codUnidade") int codUnidade, @RequestParam("codTipo") int codTipo,
 			@RequestParam("precoCusto") Double precoCusto, @RequestParam("precoVenda") Double precoVenda,
-			@RequestParam("quantidade") int quantidade, Model model) throws GenericDAOException {
+			@RequestParam("quantidade") int quantidade) throws GenericDAOException {
 
-
-	
+		prod.setCodProduto(codProduto);
+		prod.setDescricao(descricao);
+		prod.setCodUnidade(codUnidade);
+		prod.setCodTipo(codTipo);
+		prod.setPrecoCusto(precoCusto);
+		prod.setPrecoVenda(precoVenda);
+		prod.setQuantidade(quantidade);
+		
 		pDao.atualizarProduto(prod);
-		return "alterarProduto";
+		return "acessoListarProdutos";
 
 	}
 
 	@PostMapping("/excProduto")
-	public String excProduto(@RequestParam("codProduto") String codProduto, Model model) throws GenericDAOException {
+	public String excProduto(@RequestParam("idProduto") String idProduto) throws GenericDAOException {
 
-
-		prod.setCodProduto(codProduto);
+		prod.setCodProduto(idProduto);
 		pDao.excluirProduto(prod);
 
-	//	model.addAttribute("codProduto", codProduto);
-		
-		
-		return "excluirProduto";
-		
+		// model.addAttribute("codProduto", codProduto);
+
+		return "produtos";
+
 	}
-	
 
 	@PostMapping("/lisProduto")
 	public List<Produto> lisProduto(Model model) throws GenericDAOException {
 		List<Produto> lista = new ArrayList<Produto>();
 
-		
 		pDao.listarProdutos(prod);
-		
+
 		model.addAttribute("LISTA", lista);
 		return lista;
-		
-		
-		
-		
+
 	}
-	
+
 	@PostMapping("/getProd")
 	public Produto getProd(int idProduto) throws GenericDAOException {
-		
+
 		prod.setIdProduto(idProduto);
-			
-		prod = pDao.getProduto(prod);
-		
-		
-		
-		
-		
-		return prod;
-		
-		
-		
-		
+
+		return prod = pDao.getProduto(prod);
+
 	}
-	
-		
-	
+
 }

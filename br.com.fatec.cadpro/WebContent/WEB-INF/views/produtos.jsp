@@ -7,7 +7,7 @@
 <c:import url="cabecalho.jsp"></c:import>
 
 <%
-	List<Produto> lista = (List<Produto>)session.getAttribute("LISTA"); %>
+	List<Produto> lista = (List<Produto>) session.getAttribute("LISTA"); %>
 
 <section>
 	<div class="container">
@@ -55,7 +55,7 @@
 
 
 						<% for ( Produto p : lista ) {%>
-							<% session.setAttribute("IDPRODUTO",new Integer(p.getIdProduto())); %>
+							<% session.setAttribute("IDPRODUTO", p.getIdProduto()); %>
 							<tr>
 								<td><%= p.getIdProduto() %></td>
 								<td><%= p.getCodProduto() %></td>
