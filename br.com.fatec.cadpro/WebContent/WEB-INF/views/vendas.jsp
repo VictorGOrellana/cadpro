@@ -1,6 +1,12 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@page import="java.util.ArrayList , java.util.List, br.com.fatec.cadpro.entidades.Vendas" %>
 <c:import url="cabecalho.jsp"></c:import>
 <body>
+
+
+<%
+	List<Vendas> lista = (List<Vendas>)session.getAttribute("LISTA"); %>
+
 <section>
             <div class="container" >
 			   
@@ -39,24 +45,28 @@
                                    </tr>
                                 </thead>
                                 <tbody>
+                                
+                                <% for ( Vendas v : lista ) {%>
+							<% session.setAttribute("IDVENDA",new Integer(v.getIdVenda())); %>
                                     <tr>
                                    		<form>
-                                        <td>000001</th>
-                                        <td>Joelma Mendes</td>
-                                        <td>5</td>
-                                        <td>R$1530</td>
+                                        <td><%= v.getIdVenda() %></th>
+                                        <td><%= v.getCodVen() %></td>
+                                        <td><%= v.getParcelas() %></td>
+                                        <td><%= v.getVlrTotal() %></td>
 										<td align="center">
 											  <button type="button" class="btn btn-default" onClick="location.href='acessoAlterarVenda'" value ="submit">Alterar</button>
 		                              		  <button type="button" class="btn btn-default" onClick="location.href='acessoExcluirVenda'" id="proximo" >Excluir</button>
 										</form>
 										</td>	
 									
-                                    </tr> 								
+                                    </tr>
+                                    <% } %> 								
                                 </tbody>
                              </table>
                              
                              <div>
-		                             <button class="btn btn-default" id="anterior" onCLick='location.href="acessoCadastrarProduto"'>Incluir</button>
+		                             <button class="btn btn-default" id="anterior" onCLick='location.href="acessoEfetuarVenda"'>Incluir</button>
 		             </div>
 <!--						 	<div>
 		                             <button class="btn btn-default" id="anterior" disabled>Anterior</button>

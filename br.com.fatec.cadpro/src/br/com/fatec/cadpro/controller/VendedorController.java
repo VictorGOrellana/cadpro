@@ -4,10 +4,16 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import br.com.fatec.cadpro.dao.GenericDAOException;
 import br.com.fatec.cadpro.dao.VendedorDAO;
 import br.com.fatec.cadpro.dao.VendedorDAOImpl;
 import br.com.fatec.cadpro.entidades.Vendedor;
@@ -19,7 +25,15 @@ public class VendedorController {
 	VendedorDAO vDAO = new VendedorDAOImpl();
 
 	@RequestMapping("/acessoAlterarVendedor")
-	public String acessoAlterarVendedor() {
+	public String acessoAlterarVendedor(HttpServletRequest request ,Model model,  HttpServletResponse response) throws GenericDAOException {
+		HttpSession session = request.getSession();
+		Object s = session.getAttribute("CODVEN");
+		vendedor.setCodVen(Integer.parseInt(s.toString()));
+		
+		Vendedor vendTela = vDAO.getVendedor(vendedor.getCodVen());
+		
+		session.setAttribute("CADASTROBD",vendTela);
+		
 		return "alterarVendedor";
 	}
 
@@ -29,12 +43,28 @@ public class VendedorController {
 	}
 
 	@RequestMapping("/acessoListarVendedores")
-	public String acessoListarVendedores() {
+	public String acessoListarVendedores(HttpServletRequest request , HttpServletResponse response) throws GenericDAOException {
+		
+		List<Vendedor> lista = new ArrayList<Vendedor>();
+		HttpSession session = request.getSession();
+		
+		lista=vDAO.listarVendedor(vendedor);
+		
+		session.setAttribute("LISTA",lista);
 		return "vendedores";
 	}
 	
 	@RequestMapping("/acessoExcluirVendedor")
-	public String acessoExcluirVendedor() {
+	public String acessoExcluirVendedor(HttpServletRequest request ,Model model,  HttpServletResponse response) throws GenericDAOException {
+		
+		HttpSession session = request.getSession();
+		Object s = session.getAttribute("CODVEN");
+		vendedor.setCodVen(Integer.parseInt(s.toString()));
+		
+		Vendedor vendTela = vDAO.getVendedor(vendedor.getCodVen());
+		
+		session.setAttribute("CADASTROBD",vendTela);
+		
 		return "excluirVendedor";
 	}	
 	
@@ -54,7 +84,7 @@ public class VendedorController {
 	public String incVendedor(@RequestParam("nome") String nome, @RequestParam("endereco") String endereco,
 								@RequestParam("bairro") String bairro, @RequestParam("cidade") String cidade, @RequestParam("estado") String estado,
 								@RequestParam("cep") String cep, @RequestParam("cpf") String cpf, @RequestParam("rg") String rg, @RequestParam("fone") String fone,
-								@RequestParam("email") String email, @RequestParam("dataCad") Date dataCad, @RequestParam("dataNasc") Date dataNasc, @RequestParam("porComissao") double porComissao) {
+								@RequestParam("email") String email,@RequestParam("senha") String senha, @RequestParam("porComissao") double porComissao) {
 
 		vendedor.setNome(nome);
 		vendedor.setEndereco(endereco);
@@ -66,8 +96,8 @@ public class VendedorController {
 		vendedor.setRg(rg);
 		vendedor.setFone(fone);
 		vendedor.setEmail(email);
-		vendedor.setDataCad(dataCad);
-		vendedor.setDataNasc(dataNasc);
+		vendedor.setSenha(senha);
+		
 		vendedor.setPorComissao(porComissao);
 		
 		vDAO.incluirVendedor(vendedor);
@@ -79,7 +109,7 @@ public class VendedorController {
 	public String altVendedor(@RequestParam("codVen") int codVen, @RequestParam("nome") String nome, @RequestParam("endereco") String endereco,
 								@RequestParam("bairro") String bairro, @RequestParam("cidade") String cidade, @RequestParam("estado") String estado,
 								@RequestParam("cep") String cep, @RequestParam("cpf") String cpf, @RequestParam("rg") String rg, @RequestParam("fone") String fone,
-								@RequestParam("email") String email, @RequestParam("dataCad") Date dataCad, @RequestParam("dataNasc") Date dataNasc, @RequestParam("porComissao") double porComissao) {
+								@RequestParam("email") String email, @RequestParam("porComissao") double porComissao) {
 		
 		vendedor.setCodVen(codVen);
 		vendedor.setNome(nome);
@@ -92,8 +122,7 @@ public class VendedorController {
 		vendedor.setRg(rg);
 		vendedor.setFone(fone);
 		vendedor.setEmail(email);
-		vendedor.setDataCad(dataCad);
-		vendedor.setDataNasc(dataNasc);
+		
 		vendedor.setPorComissao(porComissao);
 		
 		vDAO.atualizarVendedor(vendedor);
@@ -105,7 +134,7 @@ public class VendedorController {
 	public String lisVendedor(@RequestParam("codVen") int codVen, @RequestParam("nome") String nome, @RequestParam("endereco") String endereco,
 								@RequestParam("bairro") String bairro, @RequestParam("cidade") String cidade, @RequestParam("estado") String estado,
 								@RequestParam("cep") String cep, @RequestParam("cpf") String cpf, @RequestParam("rg") String rg, @RequestParam("fone") String fone,
-								@RequestParam("email") String email, @RequestParam("dataCad") Date dataCad, @RequestParam("dataNasc") Date dataNasc, @RequestParam("porComissao") double porComissao) {
+								@RequestParam("email") String email, @RequestParam("porComissao") double porComissao) {
 		
 		vendedor.setCodVen(codVen);
 		vendedor.setNome(nome);
@@ -118,8 +147,7 @@ public class VendedorController {
 		vendedor.setRg(rg);
 		vendedor.setFone(fone);
 		vendedor.setEmail(email);
-		vendedor.setDataCad(dataCad);
-		vendedor.setDataNasc(dataNasc);
+
 		vendedor.setPorComissao(porComissao);
 		
 		List<Vendedor> lista = vDAO.listarVendedor(vendedor);
@@ -130,7 +158,7 @@ public class VendedorController {
 	@RequestMapping("/getVendedor")
 	public String getVendedor(@RequestParam("codVen") String codVen) {
 		
-		vendedor = vDAO.getVendedor(codVen);
+		vendedor = vDAO.getVendedor(Integer.parseInt(codVen));
 		
 		return "vendas";
 	}

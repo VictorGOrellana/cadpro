@@ -1,5 +1,12 @@
 package br.com.fatec.cadpro.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,8 +31,15 @@ public class VendasController {
 	 */
 	
 	@RequestMapping("/acessoListarVendas")
-	public String  acessoTelaListarVendas(){
-	return "vendas";
+	public String  acessoTelaListarVendas(HttpServletRequest request , HttpServletResponse response) throws GenericDAOException{
+		List<Vendas> lista = new ArrayList<Vendas>();
+		HttpSession session = request.getSession();
+		
+		lista = vDao.listarVendas(venda);
+		
+		session.setAttribute("LISTA",lista);
+		
+		return "vendas";
 		
 	}
 	

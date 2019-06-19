@@ -4,7 +4,8 @@
 <%@ page import="br.com.fatec.cadpro.entidades.Vendedor , br.com.fatec.cadpro.dao.VendedorDAO , br.com.fatec.cadpro.dao.VendedorDAOImpl , java.util.List "   %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>    
 <c:import url="cabecalho.jsp"></c:import>
-
+<%
+	List<Vendedor> lista = (List<Vendedor>)session.getAttribute("LISTA"); %>
   <section>
             <div class="container" >
 			   
@@ -44,35 +45,22 @@
                                  <tbody>
                
               
-              <% 
-              	VendedorDAO vDao = new  VendedorDAOImpl(); 
-             	Vendedor v = new Vendedor();
-             	v.setCodVen(2);
-             	v.setNome("Paulo");
-             	v.setCpf("458.666.584-54");
-              	List<Vendedor> vend = new ArrayList<>();
-              	vend.add(v);
-              	v = new Vendedor();
-              	v.setCodVen(2);
-             	v.setNome("Marcio");
-             	v.setCpf("458.666.584-54");
-              			//vDao.listarVendedor(v);
-                          
-              %>
-              <% for (Vendedor ve : vend) { %>  
+              
+              <% for (Vendedor ve : lista) { %>
+              	<% session.setAttribute("CODVEN",ve.getCodVen()); %>  
                 <tr>
                     <td> <%= ve.getCodVen() %> </td>
                     <td><%= ve.getNome() %></td>
                     <td><%= ve.getCpf() %></td>
-           	        <td align="center"><button type="button"class="btn btn-default" onClick='location.href="formVendas.html"' id="anterior">Alterar</button>
-		                               <button class="btn btn-default" id="proximo" >Excluir</button>
+           	        <td align="center"><button type="button"class="btn btn-default" onClick='location.href="acessoAlterarVendedor"' id="anterior">Alterar</button>
+		                               <button class="btn btn-default" onClick='location.href="acessoExcluirVendedor"' id="proximo" >Excluir</button>
 					</td>	
                 </tr>
                 <% } %>
             </tbody>
                              </table>
                             <div>
-		                             <button class="btn btn-default" id="anterior" onCLick='location.href="acessoCadastrarProduto"'>Incluir</button>
+		                             <button class="btn btn-default" id="anterior" onCLick='location.href="acessoCadastrarVendedor"'>Incluir</button>
 		             </div>
 <!--						 	<div>
 		                             <button class="btn btn-default" id="anterior" disabled>Anterior</button>

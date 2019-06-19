@@ -10,7 +10,7 @@ public interface VendasDAO {
 	public static final String ADICIONAR_VENDA =" INSERT INTO TB_VENDAS (NUMEROVENDA, CODVEN, PARCELAS, VLRTOTAL, QUANTIDADE) VALUES ( ? , ? , ? , ? , ? , ? ) ;  ";
 	public static final String EXCLUIR_VENDA =" DELETE FROM TB_VENDAS WHERE IDVENDA = ? ;";
 	public static final String ALTERAR_VENDA =" UPDATE TB_VENDAS SET NUMEROVENDA = ? , CODVEN = ? , PARCELAS = ? , VLRTOTAL = ? , QUANTIDADE = ?  WHERE IDVENDA = ?  ";
-	public static final String LISTAR_VENDA =" SELECT * FROM TB_VENDAS WHERE NUMEROVENDA = ? ; ";
+	public static final String LISTAR_VENDA =" SELECT * FROM TB_VENDAS ; ";
 	public static final String GET_VENDA =" SELECT * FROM TB_VENDAS WHERE IDVENDA = ? ; "; 
 	
 	public void adicionarVenda(Vendas vendas) throws GenericDAOException;

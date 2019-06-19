@@ -15,11 +15,23 @@ public class Vendedor {
 	private String rg;
 	private String fone;
 	private String email;
-	private Date dataCad;
-	private Date dataNasc;
+	private String senha;
+
 	private double porComissao;
 	
 	
+	
+	
+	public String getSenha() {
+		return senha;
+	}
+
+
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
+
+
 	public int getCodVen() {
 		return codVen;
 	}
@@ -130,25 +142,7 @@ public class Vendedor {
 	}
 
 
-	public Date getDataCad() {
-		return dataCad;
-	}
-
-
-	public void setDataCad(Date dataCad) {
-		this.dataCad = dataCad;
-	}
-
-
-	public Date getDataNasc() {
-		return dataNasc;
-	}
-
-
-	public void setDataNasc(Date dataNasc) {
-		this.dataNasc = dataNasc;
-	}
-
+	
 
 	public double getPorComissao() {
 		return porComissao;

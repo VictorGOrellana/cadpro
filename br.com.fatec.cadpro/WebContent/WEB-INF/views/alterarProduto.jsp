@@ -1,84 +1,104 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@page import=" br.com.fatec.cadpro.entidades.Produto" %>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Alterar Produto</title>
-</head>
+<c:import url="cabecalho.jsp"></c:import>
 <body>
-<DIV id="gg_grp_tela" style="position: relative;">
-	
-	<h1> Alteração Produto </h1>
-	
-	<% Produto prodAtual = (Produto) session.getAttribute("CADASTROBD"); %>
-		
-	<form action="altProduto" method="post">
-		<DIV id="grp_idproduto" style="position: relative; margin-top: 30px; margin-left: 20px; display: inline-block;" >
-			<DIV id="lbl_idproduto" style="position: relative; " > ID Produto </DIV>
-			<DIV id="txt_idproduto" style="position: relative; margin-top: 2px; ">
-				<INPUT size="12" type="text" maxlenght="20" name="idProduto" value="<%= prodAtual.getIdProduto() %>" readonly="readonly"/>
-			</DIV>
-		</DIV>
-		
-		
-		<DIV id="grp_codproduto" style="position: relative; margin-top: 30px; margin-left: 20px; display: inline-block;" >
-			<DIV id="lbl_codproduto" style="position: relative; " > Cod. Produto </DIV>
-			<DIV id="txt_codproduto" style="position: relative; margin-top: 2px; ">
-				<INPUT size="12" type="text" maxlenght="20" name="codProduto" value="<%= prodAtual.getCodProduto() %>" />
-			</DIV>
-		</DIV>
-		<DIV id="grp_descricao" style=" margin-right: 490px;;; position: relative; margin-top: 30px; margin-left: 20px; display: inline-block;" >
-			<DIV id="lbl_descricao" style="position: relative; " > Descrição </DIV>
-			<DIV id="txt_descricao" style="position: relative; margin-top: 2px; ">
-				<INPUT size="70" type="text" maxlenght="70" name="descricao" value="<%= prodAtual.getDescricao() %>" />
-			</DIV>
-		</DIV>
-		<DIV id="grp_codunidade" style="position: relative; margin-top: 30px; margin-left: 20px; display: inline-block;" >
-			<DIV id="lbl_codunidade" style="position: relative; " > Cod. Unidade </DIV>
-			<DIV id="txt_codunidade" style="position: relative; margin-top: 2px; ">
-				<INPUT size="12" type="number" maxlenght="1" name="codUnidade" value="<%= prodAtual.getCodUnidade() %>"/>
-			</DIV>
-		</DIV>
-		<DIV id="grp_codtipo" style="position: relative; margin-top: 30px; margin-left: 20px; display: inline-block;" >
-			<DIV id="lbl_codtipo" style="position: relative; " > Cod. Tipo </DIV>
-			<DIV id="txt_codtipo" style="position: relative; margin-top: 2px; ">
-				<INPUT size="12" type="number" maxlenght="1" name="codTipo" value="<%= prodAtual.getCodTipo() %>"/>
-			</DIV>
-		</DIV>
-		<DIV id="grp_precocusto" style="position: relative; margin-top: 30px; margin-left: 20px; display: inline-block;" >
-			<DIV id="lbl_precocusto" style="position: relative; " > Preco de Custo </DIV>
-			<DIV id="txt_precocusto" style="position: relative; margin-top: 2px; ">
-				<INPUT size="12" type="number" maxlenght="10" name="precoCusto" value="<%= prodAtual.getPrecoCusto() %>" />
-			</DIV>
-		</DIV>
-		<DIV id="grp_precovenda" style="position: relative; margin-top: 30px; margin-left: 20px; display: inline-block;" >
-			<DIV id="lbl_precovenda" style="position: relative; " > Preco de Venda </DIV>
-			<DIV id="txt_precovenda" style="position: relative; margin-top: 2px; ">
-				<INPUT size="12" type="number" maxlenght="10" name="precoVenda"  value="<%= prodAtual.getPrecoVenda() %>"/>
-			</DIV>
-		</DIV>
-		<DIV id="grp_quantidade" style="position: relative; margin-top: 30px; margin-left: 20px; display: inline-block;" >
-			<DIV id="lbl_quantidade" style="position: relative; " > Quantidade </DIV>
-			<DIV id="txt_quantidade" style="position: relative; margin-top: 2px; ">
-				<INPUT size="12" type="number" maxlenght="20" name="quantidade" value="<%= prodAtual.getQuantidade() %>"/>
-			</DIV>
-		</DIV>
-		<DIV id="grp_botoes" style="position: relative; margin-top: 20px;"> 
-			<DIV id="btn_alterar" style="position: relative; margin-left: 50px; display: inline-block;">
-				<FORM>
-					<button type="submit">Alterar</button>
-				</FORM>
-			</DIV>
-		</form>
-			<DIV id="btn_cancelar" style="position: relative; margin-left: 50px; display: inline-block;">
-				<FORM>
-					<button type= "button" onClick='location.href="acessoListarProdutos"' >Voltar</button>
-				</FORM>
-			</DIV>
-		</DIV>
-		</DIV>
+<section>
+            <div class="container" >
+			   
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="tagline-message page-title text-center">
+                            <h3>_</h3>
+                            <ul class="breadcrumb">
+                                <li><a href="javascript:void(0)"></a></li>
+                                <li class="active"></li>
+                            </ul>
+                        </div>
+                    </div><!-- end col --> 
+                </div><!-- end row -->
+            </div><!-- end container -->
+        </section><!-- end section -->
 
-</body>
-</html>
+	<% Produto prodAtual = (Produto) session.getAttribute("CADASTROBD"); %>
+	<section class="section gb nopadtop">        
+        <div class="container" >
+          <div class="boxed boxedp4">
+                    <div class="row">
+                        
+                            <div class="section-title text-center">
+                                <h3>Vendas</h3>
+                            </div><!-- end title -->
+            </div>                
+        <form>
+                  <div class="row">
+                    <div class="col-md-5 pr-1">
+                      <div class="form-group">
+                        <label>ID Produto</label>
+                        <input type="text" class="form-control" name="idProduto" value="<%= prodAtual.getIdProduto() %>">
+                      </div>
+                    </div>
+                    <div class="col-md-3 px-1">
+                      <div class="form-group">
+                        <label>Cod. Produto</label>
+                        <input type="text" class="form-control" name="codProduto" value="<%= prodAtual.getCodProduto() %>">
+                      </div>
+                    </div>
+                    <div class="col-md-4 pl-1">
+                      <div class="form-group">
+                        <label for="exampleInputEmail1">Descrição</label>
+                        <input type="text" class="form-control" name="descricao" value="<%= prodAtual.getDescricao() %>">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6 pr-1">
+                      <div class="form-group">
+                        <label>Cod. Unidade</label>
+                        <input type="text" class="form-control" name="codUnidade" value="<%= prodAtual.getCodUnidade() %>" >
+                      </div>
+                    </div>
+                    <div class="col-md-6 pl-1">
+                      <div class="form-group">
+                        <label>Cod. Tipo</label>
+                        <input type="text" class="form-control" name="codTipo" value="<%= prodAtual.getCodTipo() %>">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label>Preco de Custo</label>
+                        <input type="text" class="form-control" name="precoCusto" value="<%= prodAtual.getPrecoCusto() %>">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-4 pr-1">
+                      <div class="form-group">
+                        <label>Preco de Venda</label>
+                        <input type="text" class="form-control" name="precoVenda" value="<%= prodAtual.getPrecoVenda() %>">
+                      </div>
+                    </div>
+                    </div>
+                    <div class="row">
+                    <div class="col-md-4 px-1">
+                      <div class="form-group">
+                        <label>Quantidade</label>
+                        <input type="text" class="form-control" name="quantidade" value="<%= prodAtual.getQuantidade() %>">
+                      </div>
+                    </div>
+                   </div>
+                  
+                  <div class="row text-center">
+                    <div class="update mx-auto">
+                      <button type="submit" class="btn btn-primary btn-round">Alterar</button>
+                          <button type="submit" class="btn btn-primary btn-round"type= "button" onClick='location.href="acessoListarProdutos"' >Voltar</button>
+                    </div>
+                  </div>  
+                </form>
+                </div>
+                </div>
+                </section>
+<c:import url="footer.jsp"></c:import>

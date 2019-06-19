@@ -11,7 +11,7 @@
 	<DIV id="gg_grp_tela" style="position: relative;">
 
 		<h1>Incluir Vendedor</h1>
-
+	<FORM action="incVendedor" method="post">
 		<DIV id="grp_nome"
 			style="position: relative; margin-top: 30px; margin-left: 20px; display: inline-block;">
 			<DIV id="lbl_nome" style="position: relative;">Nome</DIV>
@@ -83,28 +83,14 @@
 				<INPUT size="12" type="text" maxlenght="20" name="email" />
 			</DIV>
 		</DIV>
-
-
-
-
-
-		<DIV id="grp_datacad"
+<DIV id="grp_senha"
 			style="position: relative; margin-top: 30px; margin-left: 20px; display: inline-block;">
-			<DIV id="lbl_datacad" style="position: relative;">Data
-				Cadastro</DIV>
-			<DIV id="txt_datacad" style="position: relative; margin-top: 2px;">
-				<INPUT size="12" type="Data" maxlenght="20" name="dataCad" />
+			<DIV id="lbl_senha" style="position: relative;">Senha</DIV>
+			<DIV id="txt_senha" style="position: relative; margin-top: 2px;">
+				<INPUT size="12" type="text" maxlenght="20" name="senha" />
 			</DIV>
 		</DIV>
 
-		<DIV id="grp_datanasc"
-			style="position: relative; margin-top: 30px; margin-left: 20px; display: inline-block;">
-			<DIV id="lbl_datanasc" style="position: relative;">Data Nasc.
-			</DIV>
-			<DIV id="txt_datanasc" style="position: relative; margin-top: 2px;">
-				<INPUT size="12" type="Data" maxlenght="20" name="dataNasc" />
-			</DIV>
-		</DIV>
 
 		<DIV id="grp_comissao"
 			style="position: relative; margin-top: 30px; margin-left: 20px; display: inline-block;">
@@ -120,13 +106,14 @@
 			<DIV id="btn_incluir"
 				style="position: relative; margin-left: 50px; display: inline-block;">
 				<FORM>
-					<button onclick="vabusca">Incluir</button>
+					<button type="submit">Incluir</button>
 				</FORM>
 			</DIV>
+		</FORM>
 			<DIV id="btn_cancelar"
 				style="position: relative; margin-left: 50px; display: inline-block;">
 				<FORM>
-					<button onclick="vabusca">Voltar</button>
+					<button onClick='location.href="acessoListarVendedores"'>Voltar</button>
 				</FORM>
 			</DIV>
 		</DIV>

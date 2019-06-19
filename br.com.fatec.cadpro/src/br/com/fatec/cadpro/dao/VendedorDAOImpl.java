@@ -29,9 +29,9 @@ public class VendedorDAOImpl implements VendedorDAO {
 			ps.setString(++i, vendedor.getRg());
 			ps.setString(++i, vendedor.getFone());
 			ps.setString(++i, vendedor.getEmail());
-			ps.setDate(++i, (Date) vendedor.getDataCad());
-			ps.setDate(++i, (Date) vendedor.getDataNasc());
+
 			ps.setDouble(++i, vendedor.getPorComissao());
+			ps.setString(++i, vendedor.getSenha());
 			ps.executeUpdate();
 			ps.close();
 
@@ -58,8 +58,8 @@ public class VendedorDAOImpl implements VendedorDAO {
 			ps.setString(++i, vendedor.getRg());
 			ps.setString(++i, vendedor.getFone());
 			ps.setString(++i, vendedor.getEmail());
-			ps.setDate(++i, (Date) vendedor.getDataCad());
-			ps.setDate(++i, (Date) vendedor.getDataNasc());
+
+
 			ps.setDouble(++i, vendedor.getPorComissao());
 			ps.setInt(++i,vendedor.getCodVen());
 			
@@ -94,8 +94,7 @@ public class VendedorDAOImpl implements VendedorDAO {
 				v.setRg(rs.getString("RG"));
 				v.setFone(rs.getString("FONE"));
 				v.setEmail(rs.getString("E_MAIL"));
-				v.setDataCad(rs.getDate("DATA_CAD"));
-				v.setDataNasc(rs.getDate("DATA_NASC"));
+			
 				v.setPorComissao(rs.getDouble("PORC_COMISSAO"));
 				lv.add(v);
 			}
@@ -107,15 +106,17 @@ public class VendedorDAOImpl implements VendedorDAO {
 		return lv;
 	}
 
-	public Vendedor getVendedor(String codVendedor) {
-		Vendedor v = new Vendedor();
+	public Vendedor getVendedor(int codVendedor) {
+		
 		try {
 			int i = 0;
 			PreparedStatement ps = con.prepareStatement(getVendedor);
-			ps.setString(++i, codVendedor);
+			ps.setInt(++i, codVendedor);
 
 			ResultSet rs = ps.executeQuery();
 
+			if(rs.next()) {
+			Vendedor v = new Vendedor();
 			v.setCodVen(rs.getInt("CODVEN"));
 			v.setNome(rs.getString("NOME"));
 			v.setEndereco(rs.getString("ENDERECO"));
@@ -127,15 +128,14 @@ public class VendedorDAOImpl implements VendedorDAO {
 			v.setRg(rs.getString("RG"));
 			v.setFone(rs.getString("FONE"));
 			v.setEmail(rs.getString("E_MAIL"));
-			v.setDataCad(rs.getDate("DATA_CAD"));
-			v.setDataNasc(rs.getDate("DATA_NASC"));
 			v.setPorComissao(rs.getDouble("PORC_COMISSAO"));
-
+            return v; 
+			}
 		} catch (SQLException e) {
 
 			e.printStackTrace();
 		}
-		return v;
+		return null;
 	}
 
 	public void excluirVendedor(Vendedor vendedor) {

@@ -5,7 +5,7 @@ import br.com.fatec.cadpro.entidades.Vendedor;
 
 public interface VendedorDAO {
 	public static final String INSERIR_VENDEDOR = " INSERT INTO TB_VENDEDOR ( NOME , ENDERECO , BAIRRO , CIDADE ," +
-			" ESTADO , CEP , CPF , RG , FONE, EMAIL , DATACAD , DATANASC , PORCCOMISSAO ) VALUES ( ? , ? , ? , ? , ? , ? , ? , ? , ? , ?"
+			" ESTADO , CEP , CPF , RG , FONE, E_MAIL , PORC_COMISSAO, SENHAVEND) VALUES ( ? , ? , ? , ? ,  ? , ? , ? , ? , ?"
 			+ " , ? , ? , ? ); ";
 	
 	public static final String EXCLUIR_VENDEDOR = " DELETE FROM TB_VENDEDOR WHERE CODVEN = ? ;";
@@ -23,19 +23,18 @@ public interface VendedorDAO {
 			"     EMAIL = ? , " +
 			"     DATACAD = ? , " +
 			"     DATANASC = ? , " +
-			"     PORCCOMISSAO = ? "
+			"     PORC_COMISSAO = ? "
 			+ "   WHERE CODVEN = ? ;";	 
 	
 	public static final String  LISTAR_VENDEDOR = "SELECT  * FROM TB_VENDEDOR ; ";
 	
 	
-	public static final String  getVendedor = "SELECT  CODVEN , NOME , ENDERECO , BAIRRO , CIDADE , ESTADO , CEP , CPF , RG , FONE, EMAIL ,"
-			+ "										 DATACAD , DATANASC , PORCCOMISSAO FROM TB_VENDEDOR	WHERE CODVEN = ? ; ";
+	public static final String  getVendedor = "SELECT  * FROM TB_VENDEDOR	WHERE CODVEN = ? ; ";
 	
 	
 	public void incluirVendedor(Vendedor vendedor);
 	public void atualizarVendedor(Vendedor vendedor);
 	public void excluirVendedor(Vendedor vendedor);
 	public List<Vendedor> listarVendedor(Vendedor vendedor);
-	public Vendedor getVendedor(String codVendedor);
+	public Vendedor getVendedor(int codVendedor);
 }
